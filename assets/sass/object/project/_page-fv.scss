@@ -1,0 +1,33 @@
+@use '../../foundation/variables' as *;
+
+// 下層ページ共通 FV ヒーロー
+.p-page-fv {
+  position: relative;
+  overflow: hidden;
+  background-color: $color-bg;
+  min-height: 432px;
+  display: flex;
+  align-items: center;
+  padding: 140px $sp-sidePadding;
+  // 装飾円（上下中央に収まるよう y座標調整済み: 432px内でセンタリング）
+  background-image:
+    radial-gradient(circle 56px at 90px 57px, rgba($accent-color, 0.2) 100%, transparent 100%),
+    radial-gradient(circle 33px at 192px 178px, rgba($accent-color, 0.2) 100%, transparent 100%),
+    radial-gradient(circle 33px at 165px 312px, rgba($accent-color, 0.2) 100%, transparent 100%),
+    radial-gradient(circle 33px at 69px 399px, rgba($accent-color, 0.2) 100%, transparent 100%);
+  background-repeat: no-repeat;
+
+  @include mq(md) {
+    padding: 140px 88px;
+    background-image:
+      radial-gradient(circle 56px at 90px 57px, rgba($accent-color, 0.2) 100%, transparent 100%),
+      radial-gradient(circle 33px at 192px 178px, rgba($accent-color, 0.2) 100%, transparent 100%),
+      radial-gradient(circle 33px at 165px 312px, rgba($accent-color, 0.2) 100%, transparent 100%),
+      radial-gradient(circle 33px at 69px 399px, rgba($accent-color, 0.2) 100%, transparent 100%);
+  }
+
+  // 白背景専用モディファイア（Flow セクション見出し等、#fff 背景のセクション用）
+  &--white {
+    background-color: #fff;
+  }
+}

@@ -1,0 +1,98 @@
+@use '../../foundation/variables' as *;
+
+// =============================================
+// プライバシーポリシー ページ
+// =============================================
+
+.p-privacy {
+  background-color: #fff;
+  padding: 60px $sp-sidePadding 80px;
+
+  @include mq(md) {
+    padding: 100px 0;
+  }
+}
+
+.p-privacy__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  @include mq(md) {
+    gap: 80px;
+  }
+}
+
+// ページ見出し "プライバシーポリシー"（32px PC / 24px SP）
+.p-privacy__heading {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  color: #000;
+  margin: 0;
+
+  @include mq(md) {
+    font-size: 32px;
+  }
+}
+
+// ポリシー本文エリア
+.p-privacy__content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  @include mq(md) {
+    gap: 20px;
+  }
+}
+
+// イントロ文
+.p-privacy__intro {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: #000;
+  line-height: 1.9;
+  margin: 0;
+
+  @include mq(md) {
+    font-size: 16px;
+  }
+}
+
+// 各条項セクション
+.p-privacy__section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+// 条項見出し（24px PC / 18px SP）
+.p-privacy__section-heading {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: #000;
+  margin: 0;
+
+  @include mq(md) {
+    font-size: 24px;
+  }
+}
+
+// 条項本文（16px PC / 14px SP）
+.p-privacy__section-body {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: #000;
+  line-height: 1.9;
+  margin: 0;
+
+  @include mq(md) {
+    font-size: 16px;
+  }
+}

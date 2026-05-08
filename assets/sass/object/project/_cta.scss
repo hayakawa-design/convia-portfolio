@@ -1,0 +1,38 @@
+@use '../../foundation/variables' as *;
+
+.p-cta {
+  background-color: $color-cta-bg;
+  padding: 50px $sp-sidePadding;
+
+  @include mq(md) {
+    padding: 20px 0;
+  }
+}
+
+.p-cta__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  @include mq(md) {
+    max-width: $pc-inner;
+    margin: 0 auto;
+  }
+}
+
+.p-cta__heading {
+  font-size: 24px;
+  font-weight: 700;
+  color: $color-cta-text;
+  line-height: 26px;
+  text-align: center;
+}
+
+.p-cta__body {
+  font-size: 16px;
+  font-weight: 400;
+  color: $color-cta-text;
+  line-height: 26px;
+  text-align: center;
+}

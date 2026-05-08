@@ -1,0 +1,35 @@
+@use '../../foundation/variables' as *;
+
+.u-show-md {
+  display: none;
+}
+
+@include mq(sm) {
+  .u-hidden-sm {
+    display: none;
+  }
+}
+
+@include mq(md) {
+  .u-hidden-md {
+    display: none;
+  }
+}
+
+@include mq(lg) {
+  .u-hidden-lg {
+    display: none;
+  }
+}
+
+@include mq(xl) {
+  .u-hidden-xl {
+    display: none;
+  }
+}
+
+@include mq(md) {
+  .u-show-md {
+    display: inline;
+  }
+}

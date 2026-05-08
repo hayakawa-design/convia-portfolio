@@ -1,0 +1,113 @@
+@use '../../foundation/variables' as *;
+
+.p-works {
+  position: relative;
+  overflow: hidden;
+  padding: 50px $sp-sidePadding;
+  background-image:
+    radial-gradient(circle 95px at 96px 215px, rgba($accent-color, 0.2) 100%, transparent 100%),
+    radial-gradient(circle 57px at 267px 420px, rgba($accent-color, 0.2) 100%, transparent 100%),
+    radial-gradient(circle 57px at 219px 646px, rgba($accent-color, 0.2) 100%, transparent 100%),
+    radial-gradient(circle 57px at 57px 792px, rgba($accent-color, 0.2) 100%, transparent 100%);
+  background-repeat: no-repeat;
+
+  @include mq(md) {
+    padding: 200px 0;
+  }
+}
+
+.p-works__wave-top {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  line-height: 0;
+  transform: scaleY(-1);
+
+  svg {
+    width: 100%;
+    display: block;
+  }
+
+  svg:first-of-type {
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  svg:last-of-type {
+    display: none;
+
+    @include mq(md) {
+      display: block;
+    }
+  }
+}
+
+.p-works__wave-bottom {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  line-height: 0;
+
+  svg {
+    width: 100%;
+    display: block;
+  }
+
+  svg:first-of-type {
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  svg:last-of-type {
+    display: none;
+
+    @include mq(md) {
+      display: block;
+    }
+  }
+}
+
+.p-works__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  @include mq(md) {
+    gap: 100px;
+    padding-left: $pc-sidePadding;
+    padding-right: $pc-sidePadding;
+  }
+}
+
+.p-works__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @include mq(md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  li {
+    width: 100%;
+    max-width: 320px;
+
+    .c-works-card {
+      height: 100%;
+    }
+  }
+}

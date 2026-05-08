@@ -1,0 +1,41 @@
+@use '../../foundation/variables' as *;
+
+.p-news {
+  background-color: $color-cta-bg;
+  padding: 30px $sp-sidePadding;
+
+  @include mq(md) {
+    padding: 60px 0;
+  }
+}
+
+.p-news__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  @include mq(md) {
+    padding-left: $pc-sidePadding;
+    padding-right: $pc-sidePadding;
+  }
+}
+
+.p-news__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @include mq(md) {
+    align-items: stretch;
+    gap: 60px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

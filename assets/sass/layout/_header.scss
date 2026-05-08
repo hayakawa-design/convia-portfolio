@@ -1,0 +1,57 @@
+@use '../foundation/variables' as *;
+
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $header-height-sp;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: $z-header;
+
+  @include mq(md) {
+    height: $header-height-pc;
+  }
+}
+
+.l-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding-right: $sp-sidePadding;
+  padding-left: $sp-sidePadding;
+
+  @include mq(md) {
+    padding-right: 50px;
+    padding-left: 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  @include mq(xl) {
+    padding-right: $pc-sidePadding;
+    padding-left: $pc-sidePadding;
+  }
+}
+
+.l-header__logo {
+  a {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  img {
+    height: 43px;
+    width: auto;
+  }
+}
+
+.l-header__nav {
+  display: none;
+
+  @include mq(md) {
+    display: block;
+  }
+}

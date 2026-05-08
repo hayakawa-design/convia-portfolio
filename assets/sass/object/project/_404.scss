@@ -1,0 +1,143 @@
+@use '../../foundation/variables' as *;
+
+// =============================================
+// 404 ページ
+// =============================================
+
+.p-404 {
+  min-height: calc(100vh - $header-height-sp);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0 $sp-sidePadding;
+
+  @include mq(md) {
+    min-height: calc(100vh - $header-height-pc);
+    padding: 0;
+  }
+}
+
+.p-404__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 47px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+
+  @include mq(md) {
+    width: 482px;
+  }
+}
+
+.p-404__logo {
+  width: 228px;
+  height: 50px;
+  object-fit: contain;
+  display: block;
+}
+
+.p-404__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 77px;
+  width: 100%;
+}
+
+.p-404__text-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 33px;
+  width: 100%;
+}
+
+.p-404__number {
+  font-size: 128px;
+  font-weight: 900;
+  font-family: Arial, sans-serif;
+  line-height: 1;
+  letter-spacing: -0.35em; // SP: -44.8px / 128px ≈ PC: -63px / 180px
+  color: $color-main;
+  margin: 0;
+  text-align: center;
+
+  @include mq(md) {
+    font-size: 180px;
+  }
+}
+
+.p-404__desc {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  p {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Noto Sans JP", sans-serif;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    color: $color-cta-text;
+    margin: 0;
+    text-align: center;
+
+    @include mq(md) {
+      &:last-child {
+        text-align: left;
+      }
+    }
+  }
+}
+
+// =============================================
+// 装飾円（左上・右下の円グループ）
+// =============================================
+
+.p-404__decos-tl,
+.p-404__decos-br {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  span {
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    background-color: $color-cta-bg;
+  }
+}
+
+// 左上グループ
+.p-404__decos-tl {
+  span:nth-child(1) { width: 100px; height: 100px; left: -63px; top: 1px; }
+  span:nth-child(2) { width: 59px;  height: 59px;  left: 138px; top: 14px; }
+  span:nth-child(3) { width: 43px;  height: 43px;  left: 95px;  top: 87px; }
+  span:nth-child(4) { width: 43px;  height: 43px;  left: 230px; top: 39px; }
+
+  @include mq(md) {
+    span:nth-child(1) { left: 76px;  top: 89px; }
+    span:nth-child(2) { left: 277px; top: 102px; }
+    span:nth-child(3) { left: 234px; top: 175px; }
+    span:nth-child(4) { left: 369px; top: 127px; }
+  }
+}
+
+// 右下グループ
+.p-404__decos-br {
+  span:nth-child(1) { width: 100px; height: 100px; right: -56px;  bottom: 29px; }
+  span:nth-child(2) { width: 59px;  height: 59px;  right: 145px; bottom: 57px; }
+  span:nth-child(3) { width: 43px;  height: 43px;  right: 102px; bottom: 0; }
+  span:nth-child(4) { width: 43px;  height: 43px;  right: 237px; bottom: 48px; }
+
+  @include mq(md) {
+    span:nth-child(1) { right: 76px;  bottom: 114px; }
+    span:nth-child(2) { right: 277px; bottom: 142px; }
+    span:nth-child(3) { right: 234px; bottom: 85px; }
+    span:nth-child(4) { right: 369px; bottom: 133px; }
+  }
+}

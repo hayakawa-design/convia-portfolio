@@ -1,0 +1,64 @@
+@use "sass:map";
+
+// =================================
+//  ブレークポイント・ミックスイン
+// =================================
+
+$breakpoints: (
+  sm: "screen and (min-width: 600px)",
+  md: "screen and (min-width: 768px)",
+  lg: "screen and (min-width: 900px)",
+  pc: "screen and (min-width: 1000px)",
+  xl: "screen and (min-width: 1230px)",
+);
+
+@mixin mq($breakpoint: sm) {
+  @media #{map.get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// =================================
+//  レイアウト
+// =================================
+
+$pc-inner: 1000px;
+$pc-sidePadding: 120px;
+$pc-narrow-inner: 960px;
+$breakpoint: 768px;
+$sp-sidePadding: 15px;
+$pc-camp: 1280px;
+$sp-camp: 375px;
+$sp-inner: 345px;
+$header-height-sp: 80px;
+$header-height-pc: 80px;
+
+// =================================
+//  フォント
+// =================================
+
+$ff-ja: "Zen Maru Gothic", Arial, sans-serif;
+$ff-m: 500;
+
+// =================================
+//  カラー
+// =================================
+
+$color-text: #2c3e4c;
+$color-main: #2c5f8d;
+$color-bg: #f5f7f8;
+$accent-color: #c85a54;
+$color-modal-bg: #7a9ba8;
+$color-cta-bg: #d4e3e8;
+$color-cta-text: #495565;
+$color-dark: #101727;
+$color-detail-bg: #f4dedd;
+$color-detail-text: #101828;
+
+// =================================
+//  z-index
+// =================================
+
+$z-header: 1000;
+$z-drawer: 900;
+$z-modal: 1000;

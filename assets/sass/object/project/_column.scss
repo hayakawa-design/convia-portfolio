@@ -1,0 +1,320 @@
+@use '../../foundation/variables' as *;
+
+// =============================================
+// コラム一覧セクション
+// =============================================
+
+.p-column {
+  background-color: $color-bg;
+  padding: 40px $sp-sidePadding 60px;
+
+  @include mq(md) {
+    padding: 60px 0 100px;
+  }
+}
+
+.p-column__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include mq(md) {
+    max-width: 1188px;
+    margin: 0 auto;
+    padding: 0 $pc-sidePadding;
+    gap: 40px;
+  }
+}
+
+// カテゴリフィルター（コンテンツ幅のみ・中央揃え）
+.p-column__filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  align-self: center;
+
+  @include mq(md) {
+    gap: 63px;
+    flex-wrap: nowrap;
+  }
+}
+
+.p-column__filter-label {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: $color-cta-text;
+  flex-shrink: 0;
+
+  @include mq(md) {
+    font-size: 24px;
+  }
+}
+
+.p-column__filter-cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  @include mq(md) {
+    gap: 23px;
+  }
+}
+
+.p-column__filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 20px;
+  background-color: $color-bg;
+  border: 1px solid $color-cta-bg;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: $color-cta-text;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.is-active {
+    background-color: $color-cta-bg;
+    border-color: $color-cta-bg;
+  }
+
+  @include mq(md) {
+    font-size: 16px;
+    padding: 0 30px;
+  }
+}
+
+// カードグリッド（SP:1列 / md:2列 / xl:3列）
+.p-column__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  @include mq(md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  @include mq(xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// =============================================
+// コラム詳細ページ（p-column-detail）
+// =============================================
+
+.p-column-detail {
+  background-color: $color-bg;
+  padding: 40px $sp-sidePadding 60px;
+
+  @include mq(md) {
+    padding: 80px 0 100px;
+  }
+}
+
+.p-column-detail__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include mq(md) {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 $pc-sidePadding;
+    gap: 40px;
+  }
+}
+
+// 記事タイトル（24px/400）
+.p-column-detail__title {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: #101727;
+  line-height: 1.4;
+  margin: 0;
+
+  @include mq(md) {
+    font-size: 24px;
+  }
+}
+
+// リード文（16px/400）
+.p-column-detail__lead {
+  font-size: 15px;
+  font-weight: 400;
+  font-family: $ff-ja;
+  color: $color-cta-text;
+  line-height: 1.8;
+  margin: 0;
+
+  @include mq(md) {
+    font-size: 16px;
+  }
+}
+
+// ヒーロー画像（1000×680, r:10）
+.p-column-detail__img {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    aspect-ratio: 1000 / 680;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+// メタ情報（タグ + クライアント + スキル）
+.p-column-detail__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+// 記事本文エリア
+.p-column-detail__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include mq(md) {
+    gap: 24px;
+  }
+}
+
+// 本文セクションタイトル（16px/400）
+.p-column-detail__body-title {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: #101727;
+  margin: 0;
+
+  @include mq(md) {
+    font-size: 18px;
+  }
+}
+
+// 本文テキスト
+.p-column-detail__body-text {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: $ff-ja;
+  color: #333;
+  line-height: 1.9;
+  margin: 0;
+
+  @include mq(md) {
+    font-size: 16px;
+  }
+}
+
+// 一覧に戻るボタン
+.p-column-detail__back {
+  display: flex;
+  justify-content: center;
+}
+
+// =============================================
+// コラムカード（c-column-card）
+// =============================================
+
+.c-column-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  }
+}
+
+// サムネイル画像（aspect-ratio: 360/280 ≈ 9:7）
+.c-column-card__img {
+  width: 100%;
+  aspect-ratio: 9 / 7;
+  overflow: hidden;
+  background-color: #f3f4f6;
+  border-radius: 4px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+// カード本文エリア
+.c-column-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 0 4px 4px;
+}
+
+// タグ（左）・日付（右）行 — Figma: gap:150, align:CENTER
+.c-column-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// タグ（左）: h:36, pad:0 30px, 16px/400, $color-cta-bg
+.c-column-card__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 30px;
+  background-color: $color-cta-bg;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: $color-cta-text;
+  white-space: nowrap;
+}
+
+// 日付（右）: 14px/400, color: #697282
+.c-column-card__date {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: #697282;
+}
+
+// タイトル
+.c-column-card__title {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: #101727;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}

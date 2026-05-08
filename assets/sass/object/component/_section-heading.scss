@@ -1,0 +1,38 @@
+@use '../../foundation/variables' as *;
+
+.c-section-heading {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  width: 100%;
+
+  @include mq(md) {
+    gap: 30px;
+  }
+}
+
+.c-section-heading__en {
+  font-size: 40px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1;
+
+  @include mq(md) {
+    font-size: 66px;
+  }
+}
+
+.c-section-heading__ja {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  line-height: 1;
+  padding-bottom: 4px;
+
+  @include mq(md) {
+    font-size: 20px;
+    padding-bottom: 8px;
+  }
+}

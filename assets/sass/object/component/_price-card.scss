@@ -1,0 +1,184 @@
+@use '../../foundation/variables' as *;
+
+.c-price-card {
+  width: 320px;
+  flex-shrink: 0;
+  background-color: #fff;
+  border: 2px solid $color-modal-bg;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  @include mq(pc) {
+    border-radius: 0;
+  }
+}
+
+.c-price-card__head {
+  background-color: $color-modal-bg;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.c-price-card__name {
+  font-size: 24px;
+  font-weight: 700;
+  color: $color-bg;
+  line-height: 24px;
+  font-family: Arial, sans-serif;
+}
+
+.c-price-card__price {
+  font-size: 32px;
+  font-weight: 700;
+  color: $color-bg;
+  line-height: 24px;
+  font-family: Arial, sans-serif;
+}
+
+.c-price-card__type {
+  font-size: 14px;
+  font-weight: 400;
+  color: $color-bg;
+  line-height: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.c-price-card__body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.c-price-card__tagline {
+  font-size: 16px;
+  font-weight: 400;
+  color: $color-modal-bg;
+  line-height: 24px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.c-price-card__features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c-price-card__feature {
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: $color-text;
+  line-height: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+// =============================================
+// その他サービス カード（コーナーバッジ付き）
+// =============================================
+
+.c-service-card {
+  width: 320px;
+  min-width: 295px;
+  min-height: 295px;
+  flex-shrink: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+  }
+  background-color: #fff;
+  border: 2px solid $color-modal-bg;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 30px 20px;
+  scroll-snap-align: start;
+}
+
+// コーナーバッジ（左上トライアングル）
+.c-service-card__badge {
+  position: absolute;
+  top: 0;
+  left: 0;                                      // 左上に配置
+  width: 90px;
+  height: 90px;
+  background-color: $color-modal-bg;
+  clip-path: polygon(0 0, 100% 0, 0 100%);      // 左上三角形
+  pointer-events: none;
+}
+
+.c-service-card__badge-text {
+  position: absolute;
+  top: 20px;
+  left: -10px;
+  width: 90px;
+  text-align: center;
+  transform: rotate(-45.8deg); // -45°（対角線に沿わせる）+ Figma 微調整 -0.8°
+  font-size: 12px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  line-height: 1.2;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+// ヘッダー（サービス名 + 価格 + 区切り線）
+.c-service-card__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;                          // 中央揃え
+  gap: 10px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid $color-text;
+}
+
+.c-service-card__name {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  color: $color-text;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.c-service-card__price {
+  font-size: 32px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  color: $color-text;
+  line-height: 1;
+  margin: 0;
+}
+
+.c-service-card__tagline {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: $color-modal-bg;
+  line-height: 24px;
+  margin: 0;
+}
+
+.c-service-card__desc {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: $color-text;
+  line-height: 20px;
+  margin: 0;
+}

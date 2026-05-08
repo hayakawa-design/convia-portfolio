@@ -1,0 +1,121 @@
+@use '../../foundation/variables' as *;
+
+.p-fv {
+  position: relative;
+  background: #fff;
+  min-height: 1033px;
+
+  @include mq(md) {
+    min-height: 1185px;
+  }
+}
+
+.p-fv__inner {
+  padding-top: 63px;
+  padding-bottom: 94px;
+  padding-left: $sp-sidePadding;
+  padding-right: $sp-sidePadding;
+
+  @include mq(md) {
+    max-width: $pc-inner;
+    margin: 0 auto;
+    padding-top: 45px;
+    padding-bottom: 165px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.p-fv__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.p-fv__logo {
+  width: 250px;
+
+  @include mq(md) {
+    width: 433px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.p-fv__lead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+}
+
+.p-fv__lead-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    line-height: 24px;
+    letter-spacing: 0;
+
+    @include mq(md) {
+      font-size: 18px;
+    }
+  }
+}
+
+.p-fv__lead-sub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+}
+
+.p-fv__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+
+  p {
+    font-size: 28px;
+    font-weight: 500;
+    color: $color-dark;
+    letter-spacing: 2px;
+    line-height: 24px;
+    text-align: center;
+  }
+}
+
+.p-fv__body {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  color: #070808;
+  text-align: center;
+}
+
+.p-fv__wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  line-height: 0;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}

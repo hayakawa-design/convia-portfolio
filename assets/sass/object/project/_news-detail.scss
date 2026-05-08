@@ -1,0 +1,181 @@
+@use '../../foundation/variables' as *;
+
+// =============================================
+// News 詳細ページ
+// =============================================
+
+// FV帯（breadcrumb と同色の帯、コンテンツなし）
+.p-news-detail__fv {
+  background-color: $color-cta-bg;
+  height: 80px;
+
+  @include mq(md) {
+    height: 200px;
+  }
+}
+
+// ウェーブ（#D4E3E8 → ページ背景色 へのトランジション）
+.p-news-detail__wave {
+  background-color: $color-bg;
+  line-height: 0;
+  margin-bottom: -2px;
+}
+
+.p-news-detail__wave-svg--sp {
+  display: block;
+  width: 100%;
+  height: 32px;
+
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.p-news-detail__wave-svg--pc {
+  display: none;
+  width: 100%;
+  height: 100px;
+
+  @include mq(md) {
+    display: block;
+  }
+}
+
+// --- メインセクション ---
+
+.p-news-detail {
+  padding: 50px $sp-sidePadding;
+
+  @include mq(md) {
+    padding: 100px 20px; // タブレット幅で左右余白を確保
+  }
+
+  @include mq(xl) {
+    padding: 100px 0; // PCでは max-width による自然な中央揃え
+  }
+}
+
+.p-news-detail__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  @include mq(md) {
+    gap: 60px;
+  }
+}
+
+// --- 記事カード ---
+
+.p-news-detail__card {
+  background-color: #fff;
+  border: 1px solid $color-modal-bg; // #7a9ba8
+  border-radius: 10px;
+  padding: 50px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+
+  @include mq(md) {
+    max-width: 980px;
+    padding: 60px;
+    gap: 60px;
+  }
+}
+
+// --- 記事ヘッダー（メタ情報 + タイトル） ---
+
+.p-news-detail__header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid $color-cta-bg;
+}
+
+.p-news-detail__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.p-news-detail__date {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: $color-cta-text;
+  line-height: 20px;
+}
+
+.p-news-detail__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 24px;
+  background-color: $color-cta-bg;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: $color-text;
+}
+
+.p-news-detail__title {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  color: $color-dark;
+  line-height: 1.4;
+  margin: 0;
+}
+
+// --- 記事画像 ---
+
+.p-news-detail__img {
+  border-radius: 10px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+// --- 記事本文 ---
+
+.p-news-detail__body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @include mq(md) {
+    gap: 30px;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+    color: $color-cta-text;
+    line-height: 26px;
+    margin: 0;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 26px;
+    margin: 0;
+
+    @include mq(md) {
+      font-size: 16px;
+    }
+  }
+}

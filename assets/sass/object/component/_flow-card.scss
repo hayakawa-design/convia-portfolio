@@ -1,0 +1,109 @@
+@use '../../foundation/variables' as *;
+
+.c-flow-card {
+  width: 100%;
+  max-width: 350px;
+  background-color: $color-bg;
+  border: 1px solid $color-modal-bg;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  @include mq(md) {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    max-width: 940px;
+    gap: 20px;
+  }
+}
+
+// STEP番号 ＋ アイコン円
+.c-flow-card__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  width: 80px;
+}
+
+.c-flow-card__step {
+  font-size: 16px;
+  font-weight: 700;
+  color: $color-text;
+  line-height: 24px;
+  font-family: Arial, sans-serif;
+}
+
+// アイコン丸（80×80、#7a9ba8）＋ 内部アイコン画像
+.c-flow-card__icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: $color-modal-bg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  img {
+    width: 46px;
+    height: 38px;
+    object-fit: contain;
+    display: block;
+  }
+}
+
+// タイトル ＋ テキスト
+.c-flow-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+
+  @include mq(md) {
+    text-align: left;
+  }
+}
+
+.c-flow-card__title {
+  font-size: 24px;
+  font-weight: 400;
+  color: $color-text;
+  line-height: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.c-flow-card__text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333333;
+  line-height: 26px;
+  font-family: Arial, sans-serif;
+}
+
+// カード間の矢印
+.c-flow-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $accent-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-right: 4px solid $color-bg;
+    border-bottom: 4px solid $color-bg;
+    transform: rotate(45deg) translate(-2px, -2px);
+  }
+}

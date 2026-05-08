@@ -1,0 +1,133 @@
+@use '../../foundation/variables' as *;
+
+// =============================================
+// What We Do セクション（Price ページ）
+// =============================================
+
+// --- ウェーブ（上下）---
+
+// 上部ウェーブ：FV ($color-bg) → What We Do ($color-cta-bg)
+.p-what-we-do__wave-top {
+  background-color: $color-bg;
+  line-height: 0;
+  margin-bottom: -2px;
+}
+
+// 下部ウェーブ：What We Do ($color-cta-bg) → p-service-price-cards ($color-bg)
+.p-what-we-do__wave-bottom {
+  background-color: $color-bg;
+  line-height: 0;
+  margin-bottom: -2px;
+}
+
+.p-what-we-do__wave-svg--sp {
+  display: block;
+  width: 100%;
+  height: 27px;
+
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.p-what-we-do__wave-svg--pc {
+  display: none;
+  width: 100%;
+  height: 120px;
+
+  @include mq(md) {
+    display: block;
+  }
+}
+
+// --- メインセクション ---
+
+.p-what-we-do {
+  background-color: $color-cta-bg;
+  padding: 30px $sp-sidePadding;
+
+  @include mq(md) {
+    padding: 60px 100px;
+  }
+}
+
+.p-what-we-do__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+// --- カードグリッド ---
+
+.p-what-we-do__cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+
+  @include mq(md) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 48px;
+  }
+}
+
+.p-what-we-do__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  @include mq(md) {
+    max-width: 380px;
+  }
+}
+
+// --- 円形アイコン ---
+
+.p-what-we-do__icon {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: $color-main;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.p-what-we-do__icon-label {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  line-height: 1.125;
+  text-align: center;
+}
+
+// --- 説明文 ---
+
+.p-what-we-do__text {
+  font-size: 10px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: $color-cta-text;
+  line-height: 26px;
+  text-align: center;
+  margin: 0;
+}
+
+// --- "and more…" ---
+
+.p-what-we-do__more {
+  font-size: 36px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  color: $color-main;
+  line-height: 30px;
+  text-align: center;
+  margin: 0;
+}

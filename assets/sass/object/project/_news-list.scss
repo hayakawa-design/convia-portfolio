@@ -1,0 +1,178 @@
+@use '../../foundation/variables' as *;
+
+// =============================================
+// News 一覧ページ
+// =============================================
+
+// --- ウェーブ区切り（FV → コンテンツ セクション） ---
+
+.p-news-list__wave {
+  background-color: $color-bg;
+  line-height: 0;
+  margin-bottom: -2px;
+}
+
+.p-news-list__wave-svg--sp {
+  display: block;
+  width: 100%;
+  height: 26px;
+
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.p-news-list__wave-svg--pc {
+  display: none;
+  width: 100%;
+  height: 100px;
+
+  @include mq(md) {
+    display: block;
+  }
+}
+
+// --- メインコンテンツ セクション ---
+
+.p-news-list {
+  background-color: $color-cta-bg;
+  padding: 50px 0;
+
+  @include mq(md) {
+    padding: 80px 0 120px;
+  }
+}
+
+.p-news-list__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  padding: 0 $sp-sidePadding;
+
+  @include mq(md) {
+    gap: 120px;
+    padding: 0 116px;
+  }
+}
+
+// --- フィルターパネル ---
+
+.p-news-list__filter {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+
+  @include mq(md) {
+    gap: 80px;
+    max-width: $pc-inner;
+  }
+}
+
+.p-news-list__filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include mq(md) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+.p-news-list__filter-label {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  color: $color-cta-text;
+  flex-shrink: 0;
+}
+
+.p-news-list__cat-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+}
+
+.p-news-list__cat-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 30px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: $color-text;
+  cursor: pointer;
+  background-color: $color-cta-bg;
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease;
+
+  @include mq(md) {
+    padding: 0 24px;
+  }
+
+  &.is-active {
+    background-color: #fff;
+    border-color: $color-cta-bg;
+  }
+
+  &:not(.is-active):hover {
+    opacity: 0.8;
+  }
+}
+
+.p-news-list__archive {
+  position: relative;
+  display: inline-block;
+}
+
+.p-news-list__archive-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #fff;
+  border: 1px solid $color-cta-bg;
+  border-radius: 5px;
+  width: 225px;
+  height: 36px;
+  padding: 0 44px 0 30px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: $color-text;
+  cursor: pointer;
+  // カスタム三角矢印（#7a9ba8）
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 29 18'%3E%3Cpath d='M14.5 18L0 0h29z' fill='%237a9ba8'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px 9px;
+}
+
+// --- ニュースカードリスト ---
+
+.p-news-list__cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+
+  @include mq(md) {
+    align-items: stretch;
+    gap: 60px;
+    max-width: $pc-inner;
+  }
+}

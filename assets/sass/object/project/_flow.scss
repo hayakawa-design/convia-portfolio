@@ -1,0 +1,102 @@
+@use '../../foundation/variables' as *;
+
+.p-flow {
+  position: relative;
+  overflow: hidden;
+  padding: 60px $sp-sidePadding;
+  // 背景装飾円（右端 PC のみ）
+  background-image:
+    radial-gradient(circle 57px at 1173px 987px, rgba($accent-color, 0.2) 100%, transparent 100%),
+    radial-gradient(circle 57px at 1222px 761px, rgba($accent-color, 0.2) 100%, transparent 100%),
+    radial-gradient(circle 57px at 1384px 615px, rgba($accent-color, 0.2) 100%, transparent 100%),
+    radial-gradient(circle 95px at 1344px 1191px, rgba($accent-color, 0.2) 100%, transparent 100%);
+  background-repeat: no-repeat;
+
+  @include mq(sm) {
+    padding: 120px $sp-sidePadding;
+  }
+
+  @include mq(md) {
+    padding: 280px 0 150px;
+  }
+
+  @include mq(xl) {
+    padding: 200px 0 120px;
+  }
+}
+
+.p-flow__wave-top {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  line-height: 0;
+  transform: scaleY(-1);
+
+  svg {
+    width: 100%;
+    display: block;
+  }
+
+  svg:first-of-type {
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  svg:last-of-type {
+    display: none;
+
+    @include mq(md) {
+      display: block;
+    }
+  }
+}
+
+.p-flow__wave-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 0;
+
+  svg {
+    width: 100%;
+    display: block;
+  }
+
+  svg:first-of-type {
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  svg:last-of-type {
+    display: none;
+
+    @include mq(md) {
+      display: block;
+    }
+  }
+}
+
+.p-flow__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  @include mq(md) {
+    gap: 100px;
+    padding-left: $pc-sidePadding;
+    padding-right: $pc-sidePadding;
+  }
+}
+
+.p-flow__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}

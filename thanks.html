@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>お問い合わせありがとうございます | Convia</title>
+    <meta name="description" content="お問い合わせありがとうございます。内容を確認の上、2〜3営業日以内にご返信いたします。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="icon" href="./assets/img/" type="image/png" />
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <header class="l-header">
+      <div class="l-header__inner">
+        <div class="l-header__logo">
+          <a href="index.html"><img src="./assets/img/logo.svg" alt="Convia" /></a>
+        </div>
+        <nav class="l-header__nav">
+          <ul class="c-global-menu">
+            <li><a href="works.html">Works</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="column.html">Column</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service-price.html">Price</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="c-hamburger u-hidden-md" aria-label="メニューを開く">
+          <span class="c-hamburger__line"></span>
+          <span class="c-hamburger__line"></span>
+          <span class="c-hamburger__line"></span>
+        </button>
+      </div>
+      <div class="c-modal-menu u-hidden-md">
+        <nav class="c-modal-menu__nav">
+          <ul class="c-modal-menu__list">
+            <li><a href="works.html">Works</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="column.html">Column</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service-price.html">Price</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <nav class="c-breadcrumb" aria-label="パンくずリスト">
+      <ol class="c-breadcrumb__list">
+        <li class="c-breadcrumb__item">
+          <a href="index.html" class="c-breadcrumb__link">TOP</a>
+        </li>
+        <li class="c-breadcrumb__sep" aria-hidden="true">｜</li>
+        <li class="c-breadcrumb__item">
+          <a href="contact.html" class="c-breadcrumb__link">Contact</a>
+        </li>
+        <li class="c-breadcrumb__sep" aria-hidden="true">｜</li>
+        <li class="c-breadcrumb__item" aria-current="page">お問い合わせ完了</li>
+      </ol>
+    </nav>
+
+    <!-- ページFV -->
+    <section class="p-page-fv">
+      <h1 class="c-section-heading">
+        <span class="c-section-heading__en">Thank you!</span>
+        <span class="c-section-heading__ja">お問い合わせありがとうございます</span>
+      </h1>
+    </section>
+
+    <main>
+      <!-- サンクスメッセージ -->
+      <section class="p-thanks">
+        <div class="p-thanks__inner">
+          <p class="p-thanks__text">
+            お問い合わせありがとうございます。<br />
+            お問い合わせ内容を送信いたしました。<br />
+            ご入力いただいたメールアドレスへ確認メールをお送りしました。<br />
+            内容を確認の上、2〜3営業日以内にご返信いたします。
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="l-footer">
+      <div class="l-footer__inner">
+        <div class="l-footer__logo">
+          <a href="index.html"><img src="./assets/img/logo-footer.svg" alt="Convia" /></a>
+        </div>
+        <nav class="l-footer__nav">
+          <ul class="l-footer__list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="works.html">Works</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="column.html">Column</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service-price.html">Price</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="privacy.html" class="l-footer__privacy">Privacy Policy</a>
+        <p class="l-footer__copyright">©2026 convia site</p>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

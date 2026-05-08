@@ -1,0 +1,328 @@
+@use '../../foundation/variables' as *;
+
+// =============================================
+// お問い合わせフォームセクション
+// =============================================
+
+.p-contact {
+  background-color: $color-bg;
+  padding: 40px $sp-sidePadding;
+
+  @include mq(md) {
+    padding: 100px 0;
+  }
+}
+
+.p-contact__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+// リード文
+.p-contact__lead {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: $ff-ja;
+  color: #070808;
+  line-height: 1.8;
+  text-align: center;
+  margin: 0;
+
+  @include mq(md) {
+    font-size: 18px;
+    max-width: 790px;
+  }
+}
+
+// フォームカード（白枠）
+.p-contact__form {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  width: 100%;
+
+  @include mq(md) {
+    max-width: 672px;
+  }
+}
+
+// フィールド群（gap:32）
+.p-contact__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+// 各フィールド（ラベル + 入力, gap:8）
+.p-contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+// ラベル行
+.p-contact__label {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.p-contact__label-text {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: #101727;
+}
+
+// 必須マーク（*）
+.p-contact__required {
+  font-size: 14px;
+  font-weight: 400;
+  color: $accent-color;
+  line-height: 1;
+}
+
+// テキスト・メール入力（height:50, border:#D0D5DB）
+.p-contact__input {
+  width: 100%;
+  height: 50px;
+  padding: 0 12px;
+  border: 1px solid #d0d5db;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  color: $color-text;
+  background-color: #fff;
+  appearance: none;
+  outline: none;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: #aaa;
+  }
+
+  &:focus {
+    border-color: $color-main;
+  }
+}
+
+// テキストエリア（height:218, padding:12 16）
+.p-contact__textarea {
+  width: 100%;
+  height: 218px;
+  padding: 12px 16px;
+  border: 1px solid #d0d5db;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  color: $color-text;
+  background-color: #fff;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: #aaa;
+  }
+
+  &:focus {
+    border-color: $color-main;
+  }
+}
+
+// プライバシー同意セクション（gap:10）
+.p-contact__privacy {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+// 「個人情報の取り扱い」タイトル行
+.p-contact__privacy-title-row {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.p-contact__privacy-title {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: #1a1a1a;
+}
+
+// チェックボックスラベル内のリンク（「プライバシーポリシー」のみ）
+.p-contact__privacy-link {
+  color: inherit;
+  text-decoration: underline;
+}
+
+// チェックボックス行（gap:5）
+.p-contact__checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.p-contact__checkbox {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border: 1px solid #6b6866;
+  border-radius: 2px;
+  accent-color: $color-main;
+  cursor: pointer;
+}
+
+.p-contact__checkbox-label {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: $color-text;
+  cursor: pointer;
+}
+
+// 送信ボタンエリア
+.p-contact__submit {
+  display: flex;
+  justify-content: center;
+}
+
+// =============================================
+// ご相談情報セクション（こんなご相談 / 対応できないこと）
+// =============================================
+
+.p-contact-info {
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 40px $sp-sidePadding;
+  background-image: radial-gradient(circle 100px at calc(100% + 60px) calc(100% + 60px), rgba($accent-color, 0.2) 100%, transparent 100%);
+  background-repeat: no-repeat;
+
+  @include mq(md) {
+    padding: 100px 10px;
+    background-image: radial-gradient(circle 240px at 1300px 450px, rgba($accent-color, 0.2) 100%, transparent 100%);
+  }
+}
+
+.p-contact-info__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @include mq(md) {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+// ブロックタイトル
+.p-contact-info__title {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  color: $color-cta-text;
+  margin: 0 0 12px;
+}
+
+// 箇条書きリスト
+.p-contact-info__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.p-contact-info__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+// 丸ドット（8×8, #7A9BA8）
+.p-contact-info__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #7a9ba8;
+  flex-shrink: 0;
+}
+
+.p-contact-info__item-text {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: $color-cta-text;
+  line-height: 1.5;
+
+  @include mq(md) {
+    font-size: 16px;
+  }
+}
+
+// 「対応できないこと」ノートブロック
+.p-contact-info__note {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.p-contact-info__note-text {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: $ff-ja;
+  color: $color-cta-text;
+  line-height: 1.7;
+  margin: 0;
+
+  @include mq(md) {
+    font-size: 16px;
+  }
+}
+
+// =============================================
+// サンクスページ メッセージセクション
+// =============================================
+
+.p-thanks {
+  background-color: $color-bg;
+  padding: 40px 0;
+
+  @include mq(md) {
+    padding: 100px 0;
+  }
+}
+
+.p-thanks__inner {
+  display: flex;
+  justify-content: center;
+  padding: 0 $sp-sidePadding;
+
+  @include mq(md) {
+    padding: 0;
+  }
+}
+
+.p-thanks__text {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: $ff-ja;
+  color: #070808;
+  line-height: 1.9;
+  text-align: left;
+  margin: 0;
+
+  @include mq(md) {
+    font-size: 18px;
+    max-width: 790px;
+  }
+}

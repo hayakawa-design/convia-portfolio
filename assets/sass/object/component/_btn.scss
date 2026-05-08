@@ -1,0 +1,58 @@
+@use '../../foundation/variables' as *;
+
+.c-btn {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 300px;
+  padding: 15px 30px;
+  background-color: $color-text;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  }
+
+  @include mq(md) {
+    width: 350px;
+  }
+}
+
+.c-btn__text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 24px;
+
+  @include mq(md) {
+    font-size: 16px;
+  }
+}
+
+.c-btn__icon {
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 13px;
+    height: 13px;
+    background-color: $color-text;
+    border-radius: 50%;
+  }
+}

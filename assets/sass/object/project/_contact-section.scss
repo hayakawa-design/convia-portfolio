@@ -1,0 +1,60 @@
+@use '../../foundation/variables' as *;
+
+.p-contact-section {
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 30px $sp-sidePadding;
+  // 装飾円：SP 左端
+  background-image: radial-gradient(circle 100px at 100px 284px, rgba($accent-color, 0.2) 100%, transparent 100%);
+  background-repeat: no-repeat;
+
+  @include mq(md) {
+    padding: 120px 0;
+    // 装飾円：PC 右側
+    background-image: radial-gradient(circle 240px at 1080px 433px, rgba($accent-color, 0.2) 100%, transparent 100%);
+  }
+}
+
+.p-contact-section__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  @include mq(md) {
+    gap: 100px;
+    padding-left: $pc-sidePadding;
+    padding-right: $pc-sidePadding;
+  }
+}
+
+.p-contact-section__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+
+  @include mq(md) {
+    max-width: 661px;
+  }
+}
+
+.p-contact-section__heading {
+  font-size: 24px;
+  font-weight: 700;
+  color: $color-cta-text;
+  line-height: 26px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.p-contact-section__body {
+  font-size: 16px;
+  font-weight: 400;
+  color: $color-cta-text;
+  line-height: 26px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}

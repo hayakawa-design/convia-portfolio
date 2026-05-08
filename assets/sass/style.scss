@@ -1,185 +1,58 @@
-@use "sass:map";
+// =================================
+//  Foundation
+// =================================
+@use 'foundation/variables';
+@use 'foundation/base';
 
 // =================================
-//  メディアクエリ
+//  Layout
 // =================================
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/inner';
 
-$breakpoints: (
-  sm: "screen and (min-width: 600px)",
-  md: "screen and (min-width: 768px)",
-  lg: "screen and (min-width: 900px)",
-  xl: "screen and (min-width: 1230px)",
-);
+// =================================
+//  Object - Component
+// =================================
+@use 'object/component/btn';
+@use 'object/component/global-menu';
+@use 'object/component/hamburger';
+@use 'object/component/modal-menu';
+@use 'object/component/section-heading';
+@use 'object/component/works-card';
+@use 'object/component/news-card';
+@use 'object/component/price-card';
+@use 'object/component/flow-card';
+@use 'object/component/breadcrumb';
+@use 'object/component/pagination';
+@use 'object/component/member-card';
 
-@mixin mq($breakpoint: sm) {
-  @media #{map.get($breakpoints, $breakpoint)} {
-    @content;
-  }
-}
+// =================================
+//  Object - Project
+// =================================
+@use 'object/project/fv';
+@use 'object/project/cta';
+@use 'object/project/works';
+@use 'object/project/news';
+@use 'object/project/about';
+@use 'object/project/price';
+@use 'object/project/flow';
+@use 'object/project/contact-section';
+@use 'object/project/page-fv';
+@use 'object/project/works-list';
+@use 'object/project/works-detail';
+@use 'object/project/news-list';
+@use 'object/project/news-detail';
+@use 'object/project/what-we-do';
+@use 'object/project/service-price-cards';
+@use 'object/project/communication-tools';
+@use 'object/project/privacy';
+@use 'object/project/404' as page404;
+@use 'object/project/member-detail';
+@use 'object/project/contact';
+@use 'object/project/column';
 
-//===========================================
-//   レイアウト
-//===========================================
-$pc-inner: 1000px;
-$pc-sidePadding: 120px;
-$pc-narrow-inner: 960px;
-$breakpoint: 768px;
-$sp-sidePadding: 15px;
-$pc-camp: 1280px;
-$sp-camp: 375px;
-$sp-inner: 345px;
-$header-height-sp: 80px;
-$header-height-pc: 80px;
-
-//===========================================
-//   フォント
-//===========================================
-
-$ff-ja: "Zen Maru Gothic", Arial, sans-serif;
-$ff-m: 500;
-
-//===========================================
-//   カラー
-//===========================================
-$color-text: #2C3E4C;
-$color-main: #2C5F8D;
-$color-bg: #F5F7F8;
-$accent-color: #C85A54;
-
-//===========================================
-//   z-index
-//===========================================
-
-$z-header: 1000;
-$z-drawer: 900;
-$z-modal: 1000;
-
-//===========================================
-//   hiddenクラス
-//===========================================
-
-.show-md {
-  display: none;
-}
-
-@include mq(sm) {
-  .hidden-sm {
-    display: none;
-  }
-}
-@include mq(md) {
-  .hidden-md {
-    display: none;
-  }
-}
-@include mq(lg) {
-  .hidden-lg {
-    display: none;
-  }
-}
-@include mq(xl) {
-  .hidden-xl {
-    display: none;
-  }
-}
-@include mq(md) {
-  .show-md {
-    display: inline;
-  }
-}
-
-//===========================================
-//   共通化クラス
-//===========================================
-
-body {
-  color: $color-text;
-  font-family: $ff-ja;
-  font-size: 16px;
-  font-weight: $ff-m;
-  line-height: 150%;
-  letter-spacing: 0.32px;
-
-  @include mq(md) {
-    font-size: 18px;
-    line-height: 155%;
-    letter-spacing: 0.36px;
-  }
-
-  &.is-fixed {
-    overflow: hidden;
-    height: 100%;
-  }
-}
-
-.inner {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  padding-right: $sp-sidePadding;
-  padding-left: $sp-sidePadding;
-
-  @include mq(md) {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    padding-right: 50px;
-    padding-left: 50px;
-  }
-
-  @include mq(xl) {
-    padding-top: 100px;
-    padding-bottom: 100px;
-    padding-right: $pc-sidePadding;
-    padding-left: $pc-sidePadding;
-  }
-}
-
-// ================================
-//  初期設定 CSS
-// ================================
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  overflow-x: hidden;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: $color-bg;
-}
-
-main {
-  margin-top: $header-height-sp;
-
-  @include mq(md) {
-    margin-top: $header-height-pc;
-  }
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  display: inline-block;
-}
-
-li {
-  list-style: none;
-}
-
-p {
-  margin: 0;
-}
-
-// ================================
-//  本題のCSS
-// ================================
+// =================================
+//  Object - Utility
+// =================================
+@use 'object/utility/utility';

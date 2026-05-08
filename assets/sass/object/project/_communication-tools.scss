@@ -1,0 +1,120 @@
+@use '../../foundation/variables' as *;
+
+// =============================================
+// Communication & Tools セクション
+// =============================================
+
+.p-comm-tools {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+
+  @include mq(md) {
+    gap: 80px;
+  }
+}
+
+// 見出し "Communication & Tools"（66px PC / 30px SP）
+.p-comm-tools__heading {
+  font-size: 30px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: #000;
+  margin: 0;
+
+  @include mq(md) {
+    font-size: 66px;
+  }
+}
+
+// --- コミュニケーションスタンス ---
+
+.p-comm-tools__communication {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  @include mq(md) {
+    max-width: 768px;
+  }
+}
+
+// --- 使用ツール ---
+
+.p-comm-tools__tools {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+// サブ見出し（18px: スタンス / 16px: 使用ツール）
+.p-comm-tools__sub-heading {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  color: $color-dark;
+  margin: 0;
+
+  &--lg {
+    font-size: 18px;
+  }
+}
+
+.p-comm-tools__text {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: $color-cta-text;
+  line-height: 26px;
+  margin: 0;
+}
+
+// ツールグリッド（SP: 縦積み / PC: 横4列）
+.p-comm-tools__tools-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include mq(md) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 41px;
+  }
+}
+
+.p-comm-tools__tools-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @include mq(md) {
+    flex: 1;
+  }
+}
+
+.p-comm-tools__category {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: #697282;
+  display: block;
+  margin-bottom: 1px;
+}
+
+.p-comm-tools__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  li {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: Arial, sans-serif;
+    color: $color-dark;
+    line-height: 1.4;
+  }
+}

@@ -1,0 +1,161 @@
+@use '../../foundation/variables' as *;
+
+// =============================================
+// メンバーカード
+// =============================================
+
+.c-member-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  max-width: 400px;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+  }
+
+  @include mq(pc) {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    max-width: none;
+  }
+}
+
+// 写真エリア（200×200px 正方形）
+.c-member-card__photo {
+  width: 200px;
+  height: 200px;
+  background-color: #ccc;
+  flex-shrink: 0;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+// テキスト情報エリア
+.c-member-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  width: 100%;
+
+  @include mq(pc) {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+  }
+}
+
+.c-member-card__name {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+}
+
+// cats + skills をまとめるグループ（Figma: Frame 2610319, VERTICAL, gap:8）
+.c-member-card__tag-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+// カテゴリ（cats）・スキル（skills）ラッパー共通
+.c-member-card__cats,
+.c-member-card__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+// SPのみ：skillsは初期折りたたみ（GSAP制御）
+.c-member-card__skills {
+  height: 0;
+  overflow: hidden;
+
+  @include mq(pc) {
+    height: auto !important;
+    overflow: visible;
+  }
+}
+
+// スキルトグルボタン（pc未満のみ表示）
+.c-member-card__tag-toggle {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  @include mq(pc) {
+    display: none;
+  }
+}
+
+.c-member-card__tag-toggle-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s ease;
+
+  .c-member-card__tag-group.is-open & {
+    transform: rotate(180deg);
+  }
+}
+
+// タグ共通スタイル（スキルタグ基準：bg #f5f7f8・padding 6px）
+.c-member-card__tag {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 6px;
+  background-color: $color-bg;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: $color-text;
+}
+
+// カテゴリタグ：bg #D4E3E8・padding 16px・text #333
+.c-member-card__cats .c-member-card__tag {
+  background-color: $color-cta-bg;
+  padding: 0 16px;
+  color: #333;
+}
+
+.c-member-card__bio {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.8;
+  margin: 0;
+  text-align: left;
+}

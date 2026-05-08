@@ -1,0 +1,22 @@
+@use '../foundation/variables' as *;
+
+.l-inner {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-right: $sp-sidePadding;
+  padding-left: $sp-sidePadding;
+
+  @include mq(md) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  @include mq(xl) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-right: $pc-sidePadding;
+    padding-left: $pc-sidePadding;
+  }
+}

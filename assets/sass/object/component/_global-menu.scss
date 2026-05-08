@@ -1,0 +1,20 @@
+@use '../../foundation/variables' as *;
+
+.c-global-menu {
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+
+  li {
+    a {
+      font-size: 16px;
+      color: $color-text;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $color-main;
+      }
+    }
+  }
+}

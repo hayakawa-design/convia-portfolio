@@ -1,0 +1,73 @@
+@use '../../foundation/variables' as *;
+
+.c-pagination {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.c-pagination__list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 16px;
+}
+
+.c-pagination__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 51px;
+  padding: 0 6px;
+  background-color: #fff;
+  border: 1px solid $color-cta-bg;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  color: $color-text;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+
+  &.is-active {
+    background-color: $color-text;
+    color: #fff;
+    border-color: $color-text;
+    pointer-events: none;
+  }
+
+  &:not(.is-active):hover {
+    opacity: 0.7;
+  }
+}
+
+// 省略記号（3つの円）
+.c-pagination__ellipsis {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  span {
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: $color-text;
+    flex-shrink: 0;
+  }
+}
+
+// 次へ矢印（40×20px frame / line: x10→x30 / chevron: (23,3)→(30,10)→(23,17) / stroke: 2px）
+.c-pagination__next {
+  display: block;
+  width: 40px;
+  height: 20px;
+  text-decoration: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='20' viewBox='0 0 40 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10H30M23 3L30 10L23 17' stroke='%232c3e4c' stroke-width='2' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 40px 20px;
+}

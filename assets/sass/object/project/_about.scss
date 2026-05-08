@@ -1,0 +1,546 @@
+@use '../../foundation/variables' as *;
+
+.p-about {
+  position: relative;
+  overflow: hidden;
+  padding: 50px $sp-sidePadding;
+  // 装飾円（Figma: Ellipse 680）左端に配置
+  background-image: radial-gradient(circle 90px at 90px 221px, rgba($accent-color, 0.2) 100%, transparent 100%);
+  background-repeat: no-repeat;
+
+  @include mq(sm) {
+    padding: 120px $sp-sidePadding;
+  }
+
+  @include mq(md) {
+    padding: 280px 0;
+    background-image: radial-gradient(circle 192px at 534px 480px, rgba($accent-color, 0.2) 100%, transparent 100%);
+  }
+
+  @include mq(xl) {
+    padding: 200px 0;
+  }
+}
+
+.p-about__wave-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  line-height: 0;
+  transform: scaleY(-1);
+
+  svg {
+    width: 100%;
+    display: block;
+  }
+
+  svg:first-of-type {
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  svg:last-of-type {
+    display: none;
+
+    @include mq(md) {
+      display: block;
+    }
+  }
+}
+
+.p-about__wave-bottom {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  line-height: 0;
+
+  svg {
+    width: 100%;
+    display: block;
+  }
+
+  svg:first-of-type {
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  svg:last-of-type {
+    display: none;
+
+    @include mq(md) {
+      display: block;
+    }
+  }
+}
+
+.p-about__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  @include mq(md) {
+    gap: 100px;
+    padding-left: $pc-sidePadding;
+    padding-right: $pc-sidePadding;
+  }
+}
+
+.p-about__img {
+  width: 100%;
+  max-width: 300px;
+
+  @include mq(md) {
+    max-width: 581px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.p-about__body {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  color: #070808;
+  width: 100%;
+
+  @include mq(md) {
+    max-width: 952px;
+  }
+}
+
+// =============================================
+// About ページ 共通ウェーブヘルパー
+// =============================================
+
+.p-about-wave {
+  line-height: 0;
+  margin-bottom: -2px;
+}
+
+.p-about-wave__svg--sp {
+  display: block;
+  width: 100%;
+
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.p-about-wave__svg--pc {
+  display: none;
+  width: 100%;
+
+  @include mq(md) {
+    display: block;
+  }
+}
+
+// FV #f5f7f8 → Why Team #d4e3e8
+.p-about-wave--why-top {
+  background-color: $color-bg;
+
+  .p-about-wave__svg--sp { height: 32px; }
+  .p-about-wave__svg--pc { height: 120px; }
+}
+
+// Why Team #d4e3e8 → Philosophy #fff
+.p-about-wave--why-bottom {
+  background-color: #fff;
+  margin-bottom: -2px;
+
+  .p-about-wave__svg--sp { height: 32px; }
+  .p-about-wave__svg--pc { height: 120px; }
+}
+
+// Philosophy #fff → Member #d4e3e8
+.p-about-wave--phil-bottom {
+  background-color: #fff;
+
+  .p-about-wave__svg--sp { height: 32px; }
+  .p-about-wave__svg--pc { height: 100px; }
+}
+
+// =============================================
+// Why Team セクション
+// =============================================
+
+.p-why-team {
+  background-color: $color-cta-bg;
+  padding: 60px $sp-sidePadding;
+
+  @include mq(md) {
+    padding: 60px 0;
+  }
+}
+
+.p-why-team__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include mq(md) {
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 48px;
+  }
+}
+
+.p-why-team__lead {
+  font-size: 19px;
+  font-weight: 500;
+  font-family: $ff-ja;
+  color: $color-text;
+  line-height: 1.7;
+  text-align: center;
+  margin: 0;
+
+  @include mq(md) {
+    font-size: 22px;
+  }
+}
+
+.p-why-team__title {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  color: $color-cta-text;
+  text-align: center;
+  margin: 0;
+
+  @include mq(md) {
+    font-size: 24px;
+  }
+}
+
+.p-why-team__body {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: $ff-ja;
+  color: #333;
+  line-height: 1.9;
+  margin: 0;
+}
+
+// =============================================
+// Our Philosophy セクション
+// =============================================
+
+.p-philosophy {
+  background-color: #fff;
+  padding: 40px $sp-sidePadding;
+
+  @include mq(md) {
+    padding: 100px 0 200px;
+  }
+}
+
+.p-philosophy__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  @include mq(md) {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+}
+
+.p-philosophy__title {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  color: $color-cta-text;
+  text-align: center;
+  margin: 0;
+
+  @include mq(md) {
+    font-size: 24px;
+  }
+}
+
+.p-philosophy__items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+
+  @include mq(md) {
+    gap: 30px;
+  }
+}
+
+.p-philosophy__item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.p-philosophy__item-title {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: $ff-ja;
+  color: $accent-color;
+  text-align: center;
+  margin: 0;
+}
+
+.p-philosophy__item-body {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: $ff-ja;
+  color: #333;
+  line-height: 1.9;
+  text-align: center;
+  margin: 0;
+}
+
+.p-philosophy__img {
+  width: 100%;
+  max-width: 300px;
+
+  @include mq(md) {
+    max-width: 581px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+// =============================================
+// Member セクション
+// =============================================
+
+.p-member {
+  background-color: $color-cta-bg;
+  padding: 20px $sp-sidePadding 40px;
+
+  @include mq(md) {
+    padding: 60px 0 100px;
+  }
+}
+
+.p-member__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  @include mq(md) {
+    gap: 50px;
+    max-width: 1388px;
+    margin: 0 auto;
+    padding: 0 $pc-sidePadding;
+  }
+}
+
+.p-member__title {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  color: $color-cta-text;
+  text-align: center;
+  margin: 0;
+
+  @include mq(md) {
+    font-size: 24px;
+  }
+}
+
+.p-member__desc {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: $color-cta-text;
+  text-align: center;
+  line-height: 1.7;
+  margin: 0;
+}
+
+// フィルターパネル
+.p-member__filter {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+
+  @include mq(md) {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+  }
+}
+
+.p-member__filter-label {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  color: $color-cta-text;
+  flex-shrink: 0;
+}
+
+// SP: flex-col（cats → skills(非表示) → toggle右寄せ）
+// PC: grid（Row1: cats|toggle / Row2: skills）
+// ※ PCのRow1-Row2間の39px間隔はskillsのpadding-topで実現（overflow:hiddenで折りたたみ時は消える）
+.p-member__filter-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+  width: 100%;
+
+  @include mq(md) {
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    grid-template-areas:
+      "cats toggle"
+      "skills skills";
+    column-gap: 12px;
+    row-gap: 0;
+    flex-grow: 1;
+    min-width: 0;
+    width: auto;
+  }
+}
+
+// カテゴリボタン群
+.p-member__filter-cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-self: stretch;
+
+  @include mq(md) {
+    grid-area: cats;
+    align-self: end;
+    gap: 24px;
+  }
+}
+
+// スキルタグ群（デフォルト非表示・GSAPで高さアニメーション）
+.p-member__filter-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 23px;
+  height: 0;
+  overflow: hidden;
+  align-self: stretch;
+
+  @include mq(md) {
+    grid-area: skills;
+    padding-top: 39px; // Row1との間隔（height:0時はoverflow:hiddenでクリップ）
+  }
+}
+
+// 開閉トグルボタン
+.p-member__filter-toggle {
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  @include mq(md) {
+    grid-area: toggle;
+    align-self: end;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 26px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='12' viewBox='0 0 26 12'%3E%3Cpolyline points='0,0 13,12 26,0' fill='none' stroke='%237A9BA8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 0.3s ease;
+  }
+
+  &.is-open::after {
+    transform: rotate(180deg);
+  }
+}
+
+// カテゴリボタン
+.p-member__cat-btn {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 15px;
+  background-color: #fff;
+  border: 1px solid $color-cta-bg;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: $color-text;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover { opacity: 0.8; }
+
+  &.is-active {
+    background-color: $color-cta-bg;
+    border-color: $color-cta-bg;
+    color: #333;
+  }
+
+  @include mq(md) {
+    padding: 0 16px;
+  }
+}
+
+// スキルタグ
+.p-member__skill-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 6px;
+  background-color: $color-bg;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  color: $color-text;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover { opacity: 0.8; }
+}
+
+// メンバーカードグリッド（SP:1列 / PC:2列）
+.p-member__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
+  justify-items: center;
+
+  @include mq(xl) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
