@@ -3046,6 +3046,7 @@ p {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  padding-top: 8px;
 }
 .p-service-price-cards__other-slider::-webkit-scrollbar {
   display: none;
@@ -3054,6 +3055,7 @@ p {
   .p-service-price-cards__other-slider {
     overflow: visible;
     scroll-snap-type: none;
+    padding-top: 0;
   }
 }
 
@@ -4419,3 +4421,5 @@ p {
     display: inline;
   }
 }
+
+/*# sourceMappingURL=style.css.map */

@@ -75,6 +75,7 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  padding-top: 8px; // hover の translateY(-5px) 分の見切れを防ぐ
 
   &::-webkit-scrollbar {
     display: none;
@@ -83,6 +84,7 @@
   @include mq(md) {
     overflow: visible;
     scroll-snap-type: none;
+    padding-top: 0;
   }
 }
 
