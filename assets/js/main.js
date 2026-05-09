@@ -337,13 +337,32 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Flowカード ---
   stagger(".p-flow__list", ".c-flow-card", 0.15);
 
-  // --- Priceカード ---
+  // --- Priceカード（PC: 一括出現 / SP: stagger）---
+  const isPC = window.innerWidth >= 1000;
   document.querySelectorAll(".p-price__cards, .p-service-price-cards__homepage-cards").forEach(c => {
-    stagger(c, ".c-price-card");
+    const cards = c.querySelectorAll(".c-price-card");
+    if (!cards.length) return;
+    gsap.from(cards, {
+      y: 40,
+      opacity: 0,
+      duration: 0.6,
+      stagger: isPC ? 0 : 0.1,
+      ease: "power3.out",
+      scrollTrigger: { trigger: c, start: "top 88%", once: true },
+    });
   });
 
-  // --- Service（その他）カード ---
-  stagger(".p-service-price-cards__other-cards", ".c-service-card", 0.08);
+  // --- Service（その他）カード: opacityのみ（y移動はスライダー内で見えてしまうため）---
+  const otherCards = document.querySelector(".p-service-price-cards__other-cards");
+  if (otherCards) {
+    gsap.from(otherCards.querySelectorAll(".c-service-card"), {
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.06,
+      ease: "power2.out",
+      scrollTrigger: { trigger: otherCards, start: "top 90%", once: true },
+    });
+  }
 
   // --- テキストブロック ---
   document.querySelectorAll(
