@@ -277,6 +277,19 @@ p {
   border-radius: 50%;
 }
 
+.c-btn--white {
+  background-color: #fff;
+}
+.c-btn--white .c-btn__text {
+  color: #2c3e4c;
+}
+.c-btn--white .c-btn__icon {
+  background-color: #2c3e4c;
+}
+.c-btn--white .c-btn__icon::after {
+  background-color: #fff;
+}
+
 .c-global-menu {
   display: flex;
   gap: 40px;
@@ -4088,6 +4101,367 @@ p {
   .p-thanks__text {
     font-size: 18px;
     max-width: 790px;
+  }
+}
+
+.p-brochure {
+  background-color: #2c3e4c;
+  padding: 30px 0;
+  background-image: radial-gradient(circle 100px at 100px 271px, rgba(200, 90, 84, 0.2) 100%, transparent 100%);
+  background-repeat: no-repeat;
+}
+@media screen and (min-width: 768px) {
+  .p-brochure {
+    padding: 120px 0;
+    background-image: radial-gradient(circle 240px at 360px 420px, rgba(200, 90, 84, 0.2) 100%, transparent 100%);
+  }
+}
+
+.p-brochure__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  padding: 0 15px;
+}
+@media screen and (min-width: 768px) {
+  .p-brochure__inner {
+    padding: 0 120px;
+  }
+}
+
+.p-brochure__label {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+@media screen and (min-width: 768px) {
+  .p-brochure__label {
+    gap: 30px;
+    align-items: center;
+  }
+}
+
+.p-brochure__label-en {
+  font-size: 40px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+}
+@media screen and (min-width: 768px) {
+  .p-brochure__label-en {
+    font-size: 66px;
+  }
+}
+
+.p-brochure__label-ja {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  padding-bottom: 4px;
+}
+@media screen and (min-width: 768px) {
+  .p-brochure__label-ja {
+    font-size: 20px;
+    padding-bottom: 0;
+  }
+}
+
+.p-brochure__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .p-brochure__content {
+    max-width: 661px;
+  }
+}
+
+.p-brochure__heading {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 26px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.p-brochure__body {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 26px;
+  text-align: center;
+}
+
+.p-brochure-dl {
+  background-color: #f5f7f8;
+  padding: 40px 15px;
+}
+@media screen and (min-width: 768px) {
+  .p-brochure-dl {
+    padding: 100px 0;
+  }
+}
+
+.p-brochure-dl__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.p-brochure-dl__lead {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Zen Maru Gothic", Arial, sans-serif;
+  color: #070808;
+  line-height: 1.8;
+  text-align: center;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .p-brochure-dl__lead {
+    font-size: 18px;
+    max-width: 790px;
+  }
+}
+
+.p-brochure-dl__form {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .p-brochure-dl__form {
+    max-width: 672px;
+  }
+}
+
+.p-brochure-dl__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.p-brochure-dl__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.p-brochure-dl__label {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.p-brochure-dl__label-text {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Zen Maru Gothic", Arial, sans-serif;
+  color: #101828;
+}
+
+.p-brochure-dl__required {
+  font-size: 14px;
+  font-weight: 400;
+  color: #c85a54;
+  line-height: 1;
+}
+
+.p-brochure-dl__input {
+  width: 100%;
+  height: 50px;
+  padding: 0 16px;
+  border: 1px solid #d1d5dc;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: "Zen Maru Gothic", Arial, sans-serif;
+  color: #2c3e4c;
+  background-color: #fff;
+  appearance: none;
+  outline: none;
+  box-sizing: border-box;
+}
+.p-brochure-dl__input::placeholder {
+  color: rgba(10, 10, 10, 0.5);
+}
+.p-brochure-dl__input:focus {
+  border-color: #2c5f8d;
+}
+
+.p-brochure-dl__textarea {
+  width: 100%;
+  height: 200px;
+  padding: 12px 16px;
+  border: 1px solid #d1d5dc;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: "Zen Maru Gothic", Arial, sans-serif;
+  color: #2c3e4c;
+  background-color: #fff;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+}
+.p-brochure-dl__textarea::placeholder {
+  color: rgba(10, 10, 10, 0.5);
+}
+.p-brochure-dl__textarea:focus {
+  border-color: #2c5f8d;
+}
+
+.p-brochure-dl__privacy {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.p-brochure-dl__privacy-title-row {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.p-brochure-dl__privacy-title {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Zen Maru Gothic", Arial, sans-serif;
+  color: #1a1a1a;
+}
+
+.p-brochure-dl__privacy-link {
+  color: #2c5f8d;
+  text-decoration: underline;
+}
+
+.p-brochure-dl__checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.p-brochure-dl__checkbox {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border: 2px solid #6b6866;
+  border-radius: 2px;
+  accent-color: #2c5f8d;
+  cursor: pointer;
+}
+
+.p-brochure-dl__checkbox-label {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Zen Maru Gothic", Arial, sans-serif;
+  color: #1a1a1a;
+  cursor: pointer;
+}
+
+.p-brochure-dl__submit {
+  display: flex;
+  justify-content: center;
+}
+
+.p-brochure-dl-info {
+  background-color: #fff;
+  padding: 40px 15px;
+  background-image: radial-gradient(circle 100px at calc(100% + 60px) calc(100% + 60px), rgba(200, 90, 84, 0.2) 100%, transparent 100%);
+  background-repeat: no-repeat;
+}
+@media screen and (min-width: 768px) {
+  .p-brochure-dl-info {
+    padding: 100px 10px;
+    background-image: radial-gradient(circle 240px at 1300px 450px, rgba(200, 90, 84, 0.2) 100%, transparent 100%);
+  }
+}
+
+.p-brochure-dl-info__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media screen and (min-width: 768px) {
+  .p-brochure-dl-info__inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+.p-brochure-dl-info__title {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Zen Maru Gothic", Arial, sans-serif;
+  color: #495565;
+  margin: 0 0 12px;
+}
+
+.p-brochure-dl-info__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.p-brochure-dl-info__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.p-brochure-dl-info__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #7a9ba8;
+  flex-shrink: 0;
+}
+
+.p-brochure-dl-info__item-text {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Zen Maru Gothic", Arial, sans-serif;
+  color: #495565;
+  line-height: 1.5;
+}
+@media screen and (min-width: 768px) {
+  .p-brochure-dl-info__item-text {
+    font-size: 16px;
+  }
+}
+
+.p-brochure-dl-info__note {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.p-brochure-dl-info__note-text {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Zen Maru Gothic", Arial, sans-serif;
+  color: #495565;
+  line-height: 1.7;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .p-brochure-dl-info__note-text {
+    font-size: 16px;
   }
 }
 

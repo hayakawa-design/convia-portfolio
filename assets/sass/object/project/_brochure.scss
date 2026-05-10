@@ -1,0 +1,93 @@
+@use '../../foundation/variables' as *;
+
+.p-brochure {
+  background-color: $color-text;
+  padding: 30px 0;
+  // 装飾円：SP 左端 (半径100px、中心 100px 271px)
+  background-image: radial-gradient(circle 100px at 100px 271px, rgba($accent-color, 0.2) 100%, transparent 100%);
+  background-repeat: no-repeat;
+
+  @include mq(md) {
+    padding: 120px 0;
+    // 装飾円：PC 左寄り (半径240px、中心 360px 420px)
+    background-image: radial-gradient(circle 240px at 360px 420px, rgba($accent-color, 0.2) 100%, transparent 100%);
+  }
+}
+
+.p-brochure__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  padding: 0 $sp-sidePadding;
+
+  @include mq(md) {
+    padding: 0 $pc-sidePadding;
+  }
+}
+
+.p-brochure__label {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  width: 100%;
+  font-family: Arial, sans-serif;
+
+  @include mq(md) {
+    gap: 30px;
+    align-items: center;
+  }
+}
+
+.p-brochure__label-en {
+  font-size: 40px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+
+  @include mq(md) {
+    font-size: 66px;
+  }
+}
+
+.p-brochure__label-ja {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  padding-bottom: 4px;
+
+  @include mq(md) {
+    font-size: 20px;
+    padding-bottom: 0;
+  }
+}
+
+.p-brochure__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+
+  @include mq(md) {
+    max-width: 661px;
+  }
+}
+
+.p-brochure__heading {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 26px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.p-brochure__body {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 26px;
+  text-align: center;
+}

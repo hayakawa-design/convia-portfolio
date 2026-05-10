@@ -56,3 +56,19 @@
     border-radius: 50%;
   }
 }
+
+.c-btn--white {
+  background-color: #fff;
+
+  .c-btn__text {
+    color: $color-text;
+  }
+
+  .c-btn__icon {
+    background-color: $color-text;
+
+    &::after {
+      background-color: #fff;
+    }
+  }
+}
