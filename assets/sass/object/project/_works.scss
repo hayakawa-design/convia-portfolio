@@ -92,7 +92,7 @@
   width: 100%;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 10px 0 0;
 
   @include mq(md) {
     flex-direction: row;
@@ -105,9 +105,10 @@
   li {
     width: 100%;
     max-width: 320px;
+    display: flex;
 
     .c-works-card {
-      height: 100%;
+      flex: 1;
     }
   }
 }

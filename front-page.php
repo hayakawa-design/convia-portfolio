@@ -1,81 +1,10 @@
-<!doctype html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- meta -->
-    <title></title>
-    <meta name="description" content="" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
-
-    <!-- google-font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- css -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-
-    <!-- ファビコン -->
-    <link rel="icon" href="./assets/img/" type="image/png" />
-  </head>
-  <body>
-    <!-- ヘッダー -->
-    <header class="l-header">
-      <div class="l-header__inner">
-        <!-- ロゴ -->
-        <div class="l-header__logo">
-          <a href="index.html">
-            <img src="./assets/img/logo.svg" alt="Convia" />
-          </a>
-        </div>
-
-        <!-- グローバルメニュー（PC） -->
-        <nav class="l-header__nav">
-          <ul class="c-global-menu">
-            <li><a href="works.html">Works</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="column.html">Column</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="service-price.html">Price</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-
-        <!-- ハンバーガーメニューボタン（SP） -->
-        <button class="c-hamburger u-hidden-md" aria-label="メニューを開く">
-          <span class="c-hamburger__line"></span>
-          <span class="c-hamburger__line"></span>
-          <span class="c-hamburger__line"></span>
-        </button>
-      </div>
-
-      <!-- モーダルメニュー（SP） -->
-      <div class="c-modal-menu u-hidden-md">
-        <nav class="c-modal-menu__nav">
-          <ul class="c-modal-menu__list">
-            <li><a href="works.html">Works</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="column.html">Column</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="service-price.html">Price</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+<?php get_header(); ?>
 
     <section class="p-fv">
-      <!-- FVコンテンツ -->
       <div class="p-fv__inner">
         <div class="p-fv__container">
           <div class="p-fv__logo">
-            <img src="./assets/img/fv-logo.svg" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/fv-logo.svg" alt="" />
           </div>
           <div class="p-fv__lead">
             <div class="p-fv__lead-main">
@@ -97,11 +26,10 @@
         </div>
       </div>
 
-      <!-- 波形デコレーション -->
       <div class="p-fv__wave">
         <picture>
-          <source srcset="./assets/img/fv-wave-pc.svg" media="(min-width: 768px)" />
-          <img src="./assets/img/fv-wave-sp.svg" alt="" />
+          <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/fv-wave-pc.svg" media="(min-width: 768px)" />
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/fv-wave-sp.svg" alt="" />
         </picture>
       </div>
     </section>
@@ -112,34 +40,15 @@
         <div class="p-cta__inner">
           <h2 class="p-cta__heading">協業・制作のご相談</h2>
           <p class="p-cta__body">プロジェクトのご相談や、チームでの協業についてお気軽にお問い合わせください。<br />まずはお話を伺い、最適な進め方をご提案いたします。</p>
-          <a href="contact.html" class="c-btn">
+          <a href="<?php echo home_url('/contact/'); ?>" class="c-btn">
             <span class="c-btn__text">協業・制作について相談する</span>
             <span class="c-btn__icon" aria-hidden="true"></span>
           </a>
         </div>
       </section>
 
-      <!-- 資料ダウンロード -->
-      <section class="p-brochure">
-        <div class="p-brochure__inner">
-          <div class="p-brochure__label">
-            <span class="p-brochure__label-en">Brochure</span>
-            <span class="p-brochure__label-ja">サービス資料</span>
-          </div>
-          <div class="p-brochure__content">
-            <p class="p-brochure__heading">サービス資料ダウンロード</p>
-            <p class="p-brochure__body">弊社の実績や料金体系などをご確認いただけます。</p>
-            <a href="brochure-download.html" class="c-btn c-btn--white">
-              <span class="c-btn__text">サービス資料ダウンロード</span>
-              <span class="c-btn__icon" aria-hidden="true"></span>
-            </a>
-          </div>
-        </div>
-      </section>
-
       <!-- Works -->
       <section class="p-works">
-        <!-- 上部波形デコレーション（Vector 222） -->
         <div class="p-works__wave-top" aria-hidden="true">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 31.25" preserveAspectRatio="none">
             <path d="M0 14.2965C33.1923 3.50803 118.4 -11.5959 193.691 14.2965C224.31 24.5506 303.438 38.9064 375 14.2965L375 31.25L0 31.25L0 14.2965Z" fill="#d4e3e8"/>
@@ -154,46 +63,40 @@
             <span class="c-section-heading__ja">実績</span>
           </h2>
           <ul class="p-works__list">
+            <?php
+            $works_query = new WP_Query([
+              'post_type'      => 'works_post',
+              'posts_per_page' => 3,
+              'orderby'        => 'date',
+              'order'          => 'DESC',
+            ]);
+            if ($works_query->have_posts()) :
+              while ($works_query->have_posts()) : $works_query->the_post();
+            ?>
             <li>
-              <a href="works-detail.html" class="c-works-card">
+              <a href="<?php the_permalink(); ?>" class="c-works-card">
                 <div class="c-works-card__img">
-                  <img src="./assets/img/works-img.jpg" alt="コーポレートサイトリニューアル" />
+                  <?php if (has_post_thumbnail()) : ?>
+                    <?php the_post_thumbnail('large', ['alt' => get_the_title()]); ?>
+                  <?php endif; ?>
                 </div>
                 <div class="c-works-card__body">
-                  <p class="c-works-card__title">コーポレートサイトリニューアル</p>
-                  <p class="c-works-card__text">ブランド価値を再定義し、信頼感のあるデザインに刷新しました。ブランド価値を再定義し、信頼感のあるデザインに刷新しました。</p>
+                  <p class="c-works-card__title"><?php the_title(); ?></p>
+                  <p class="c-works-card__text"><?php echo wp_trim_words(wp_strip_all_tags(get_the_content()), 40); ?></p>
                 </div>
               </a>
             </li>
-            <li>
-              <a href="works-detail.html" class="c-works-card">
-                <div class="c-works-card__img">
-                  <img src="./assets/img/works-img.jpg" alt="ECサイト構築" />
-                </div>
-                <div class="c-works-card__body">
-                  <p class="c-works-card__title">ECサイト構築</p>
-                  <p class="c-works-card__text">使いやすさと購買率向上を両立した新規ECサイトを設計・実装しました。使いやすさと購買率向上を両立した新規ECサイトを設計・実装しました。</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="works-detail.html" class="c-works-card">
-                <div class="c-works-card__img">
-                  <img src="./assets/img/works-img.jpg" alt="採用サイト制作" />
-                </div>
-                <div class="c-works-card__body">
-                  <p class="c-works-card__title">採用サイト制作</p>
-                  <p class="c-works-card__text">企業の魅力を伝える採用専用サイトを企画からデザイン・実装まで一貫して担当しました。企業の魅力を伝える採用専用サイトを企画からデザイン・実装まで一貫して担当しました。</p>
-                </div>
-              </a>
-            </li>
+            <?php
+              endwhile;
+              wp_reset_postdata();
+            endif;
+            ?>
           </ul>
-          <a href="works.html" class="c-btn">
+          <a href="<?php echo home_url('/works/'); ?>" class="c-btn">
             <span class="c-btn__text">制作実績を見る</span>
             <span class="c-btn__icon" aria-hidden="true"></span>
           </a>
         </div>
-        <!-- 下部波形デコレーション（Vector 223） -->
         <div class="p-works__wave-bottom" aria-hidden="true">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 26.04" preserveAspectRatio="none">
             <path d="M0 14.8904C47.0199 3.65376 166.51 -12.0776 268.311 14.8904C286.887 20.3592 334.232 28.0155 375 14.8904L375 26.0417L0 26.0417L0 14.8904Z" fill="#d4e3e8"/>
@@ -212,44 +115,37 @@
             <span class="c-section-heading__ja">お知らせ</span>
           </h2>
           <ul class="p-news__list">
+            <?php
+            $news_query = new WP_Query([
+              'post_type'      => 'post',
+              'posts_per_page' => 3,
+              'orderby'        => 'date',
+              'order'          => 'DESC',
+            ]);
+            if ($news_query->have_posts()) :
+              while ($news_query->have_posts()) : $news_query->the_post();
+            ?>
             <li>
-              <a href="single-news.html" class="c-news-card">
+              <a href="<?php the_permalink(); ?>" class="c-news-card">
                 <div class="c-news-card__img">
-                  <img src="./assets/img/news-img.jpg" alt="サイト公開のお知らせ" />
+                  <?php if (has_post_thumbnail()) : ?>
+                    <?php the_post_thumbnail('large', ['alt' => get_the_title()]); ?>
+                  <?php endif; ?>
                 </div>
                 <div class="c-news-card__body">
-                  <p class="c-news-card__title">サイト公開のお知らせ</p>
-                  <p class="c-news-card__date">2026.05.01</p>
-                  <p class="c-news-card__text">conviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせです！</p>
+                  <p class="c-news-card__title"><?php the_title(); ?></p>
+                  <p class="c-news-card__date"><?php echo get_the_date('Y.m.d'); ?></p>
+                  <p class="c-news-card__text"><?php echo wp_trim_words(wp_strip_all_tags(get_the_content()), 40); ?></p>
                 </div>
               </a>
             </li>
-            <li>
-              <a href="single-news.html" class="c-news-card">
-                <div class="c-news-card__img">
-                  <img src="./assets/img/news-img.jpg" alt="サイト公開のお知らせ" />
-                </div>
-                <div class="c-news-card__body">
-                  <p class="c-news-card__title">サイト公開のお知らせ</p>
-                  <p class="c-news-card__date">2026.05.01</p>
-                  <p class="c-news-card__text">conviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせです！</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="single-news.html" class="c-news-card">
-                <div class="c-news-card__img">
-                  <img src="./assets/img/news-img.jpg" alt="サイト公開のお知らせ" />
-                </div>
-                <div class="c-news-card__body">
-                  <p class="c-news-card__title">サイト公開のお知らせ</p>
-                  <p class="c-news-card__date">2026.05.01</p>
-                  <p class="c-news-card__text">conviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせですconviaのサイト公開のお知らせです！　</p>
-                </div>
-              </a>
-            </li>
+            <?php
+              endwhile;
+              wp_reset_postdata();
+            endif;
+            ?>
           </ul>
-          <a href="news.html" class="c-btn">
+          <a href="<?php echo home_url('/news/'); ?>" class="c-btn">
             <span class="c-btn__text">お知らせをもっと見る</span>
             <span class="c-btn__icon" aria-hidden="true"></span>
           </a>
@@ -258,7 +154,6 @@
 
       <!-- About Us -->
       <section class="p-about">
-        <!-- 上部波形デコレーション -->
         <div class="p-about__wave-top" aria-hidden="true">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 31.25" preserveAspectRatio="none">
             <path d="M0 14.2965C33.1923 3.50803 118.4 -11.5959 193.691 14.2965C224.31 24.5506 303.438 38.9064 375 14.2965L375 31.25L0 31.25L0 14.2965Z" fill="#d4e3e8"/>
@@ -267,26 +162,23 @@
             <path d="M0 54.8987C127.458 13.4708 454.655 -44.5281 743.775 54.8987C861.35 94.2745 1165.2 149.401 1440 54.8987L1440 120L0 120L0 54.8987Z" fill="#d4e3e8"/>
           </svg>
         </div>
-
         <div class="p-about__inner">
           <h2 class="c-section-heading">
             <span class="c-section-heading__en">About us</span>
             <span class="c-section-heading__ja">私たちについて</span>
           </h2>
           <div class="p-about__img">
-            <img src="./assets/img/about-img.png" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/about-img.png" alt="" />
           </div>
           <p class="p-about__body">
             私たちは、それぞれの専門性を持ち寄り、クライアントと誠実に向き合うWeb制作チームです。<br />
             企画・デザイン・実装を一貫して担い、本質的な価値を届けることを大切にしています。
           </p>
-          <a href="single-about.html" class="c-btn">
+          <a href="<?php echo home_url('/about/'); ?>" class="c-btn">
             <span class="c-btn__text">メンバーのプロフィールを見る</span>
             <span class="c-btn__icon" aria-hidden="true"></span>
           </a>
         </div>
-
-        <!-- 下部波形デコレーション -->
         <div class="p-about__wave-bottom" aria-hidden="true">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 31.25" preserveAspectRatio="none">
             <path d="M0 14.2965C33.1923 3.50803 118.4 -11.5959 193.691 14.2965C224.31 24.5506 303.438 38.9064 375 14.2965L375 31.25L0 31.25L0 14.2965Z" fill="#d4e3e8"/>
@@ -305,7 +197,6 @@
             <span class="c-section-heading__ja">料金</span>
           </h2>
           <div class="p-price__cards">
-            <!-- スタートアッププラン -->
             <div class="c-price-card">
               <div class="c-price-card__head">
                 <p class="c-price-card__name">スタートアッププラン</p>
@@ -321,7 +212,6 @@
                 </ul>
               </div>
             </div>
-            <!-- スタンダードプラン -->
             <div class="c-price-card">
               <div class="c-price-card__head">
                 <p class="c-price-card__name">スタンダードプラン</p>
@@ -337,7 +227,6 @@
                 </ul>
               </div>
             </div>
-            <!-- アドバンスプラン -->
             <div class="c-price-card">
               <div class="c-price-card__head">
                 <p class="c-price-card__name">アドバンスプラン</p>
@@ -355,7 +244,7 @@
             </div>
           </div>
           <p class="p-price__note">こちらのプラン以外にも達成したい目標とご予算に合わせて最適なプランを柔軟に提案させていただきます。<br />まずはお気軽にご相談ください。</p>
-          <a href="contact.html" class="c-btn">
+          <a href="<?php echo home_url('/contact/'); ?>" class="c-btn">
             <span class="c-btn__text">協業・制作について相談する</span>
             <span class="c-btn__icon" aria-hidden="true"></span>
           </a>
@@ -364,7 +253,6 @@
 
       <!-- Flow -->
       <section class="p-flow">
-        <!-- 上部波形 -->
         <div class="p-flow__wave-top" aria-hidden="true">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 31" preserveAspectRatio="none">
             <path d="M0 14.1822C33.1923 3.47997 118.4 -11.5031 193.691 14.1822C224.31 24.3542 303.438 38.5952 375 14.1822L375 31L0 31L0 14.1822Z" fill="#d4e3e8"/>
@@ -373,19 +261,17 @@
             <path d="M0 54.8987C127.458 13.4708 454.655 -44.5281 743.775 54.8987C861.35 94.2745 1165.2 149.401 1440 54.8987L1440 120L0 120L0 54.8987Z" fill="#d4e3e8"/>
           </svg>
         </div>
-
         <div class="p-flow__inner">
           <h2 class="c-section-heading">
             <span class="c-section-heading__en">Flow</span>
             <span class="c-section-heading__ja">ご依頼の流れ</span>
           </h2>
           <div class="p-flow__list">
-            <!-- STEP 01 -->
             <div class="c-flow-card">
               <div class="c-flow-card__head">
                 <p class="c-flow-card__step">STEP 01</p>
                 <div class="c-flow-card__icon">
-                  <img src="./assets/img/flow-icon-01.svg" alt="" />
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/flow-icon-01.svg" alt="" />
                 </div>
               </div>
               <div class="c-flow-card__body">
@@ -394,12 +280,11 @@
               </div>
             </div>
             <div class="c-flow-arrow" aria-hidden="true"></div>
-            <!-- STEP 02 -->
             <div class="c-flow-card">
               <div class="c-flow-card__head">
                 <p class="c-flow-card__step">STEP 02</p>
                 <div class="c-flow-card__icon">
-                  <img src="./assets/img/flow-icon-02.svg" alt="" />
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/flow-icon-02.svg" alt="" />
                 </div>
               </div>
               <div class="c-flow-card__body">
@@ -408,12 +293,11 @@
               </div>
             </div>
             <div class="c-flow-arrow" aria-hidden="true"></div>
-            <!-- STEP 03 -->
             <div class="c-flow-card">
               <div class="c-flow-card__head">
                 <p class="c-flow-card__step">STEP 03</p>
                 <div class="c-flow-card__icon">
-                  <img src="./assets/img/flow-icon-03.svg" alt="" />
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/flow-icon-03.svg" alt="" />
                 </div>
               </div>
               <div class="c-flow-card__body">
@@ -422,12 +306,11 @@
               </div>
             </div>
             <div class="c-flow-arrow" aria-hidden="true"></div>
-            <!-- STEP 04 -->
             <div class="c-flow-card">
               <div class="c-flow-card__head">
                 <p class="c-flow-card__step">STEP 04</p>
                 <div class="c-flow-card__icon">
-                  <img src="./assets/img/flow-icon-04.svg" alt="" />
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/flow-icon-04.svg" alt="" />
                 </div>
               </div>
               <div class="c-flow-card__body">
@@ -436,12 +319,11 @@
               </div>
             </div>
             <div class="c-flow-arrow" aria-hidden="true"></div>
-            <!-- STEP 05 -->
             <div class="c-flow-card">
               <div class="c-flow-card__head">
                 <p class="c-flow-card__step">STEP 05</p>
                 <div class="c-flow-card__icon">
-                  <img src="./assets/img/flow-icon-05.svg" alt="" />
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/flow-icon-05.svg" alt="" />
                 </div>
               </div>
               <div class="c-flow-card__body">
@@ -450,12 +332,11 @@
               </div>
             </div>
             <div class="c-flow-arrow" aria-hidden="true"></div>
-            <!-- STEP 06 -->
             <div class="c-flow-card">
               <div class="c-flow-card__head">
                 <p class="c-flow-card__step">STEP 06</p>
                 <div class="c-flow-card__icon">
-                  <img src="./assets/img/flow-icon-06.svg" alt="" />
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/flow-icon-06.svg" alt="" />
                 </div>
               </div>
               <div class="c-flow-card__body">
@@ -467,73 +348,9 @@
         </div>
       </section>
 
-      <!-- Contact -->
-      <section class="p-contact-section">
-        <div class="p-contact-section__inner">
-          <h2 class="c-section-heading">
-            <span class="c-section-heading__en">Contact</span>
-            <span class="c-section-heading__ja">お問い合わせ</span>
-          </h2>
-          <div class="p-contact-section__cta">
-            <p class="p-contact-section__heading">協業・制作のご相談</p>
-            <p class="p-contact-section__body">
-              プロジェクトのご相談や、チームでの協業についてお気軽にお問い合わせください。<br />
-              まずはお話を伺い、最適な進め方をご提案いたします。
-            </p>
-            <a href="contact.html" class="c-btn">
-              <span class="c-btn__text">協業・制作について相談する</span>
-              <span class="c-btn__icon" aria-hidden="true"></span>
-            </a>
-          </div>
-        </div>
-      </section>
+      <?php get_template_part('template-parts/section-contact'); ?>
 
-      <!-- 資料ダウンロード -->
-      <section class="p-brochure">
-        <div class="p-brochure__inner">
-          <div class="p-brochure__label">
-            <span class="p-brochure__label-en">Brochure</span>
-            <span class="p-brochure__label-ja">サービス資料</span>
-          </div>
-          <div class="p-brochure__content">
-            <p class="p-brochure__heading">サービス資料ダウンロード</p>
-            <p class="p-brochure__body">弊社の実績や料金体系などをご確認いただけます。</p>
-            <a href="brochure-download.html" class="c-btn c-btn--white">
-              <span class="c-btn__text">サービス資料ダウンロード</span>
-              <span class="c-btn__icon" aria-hidden="true"></span>
-            </a>
-          </div>
-        </div>
-      </section>
+      <?php get_template_part('template-parts/section-brochure'); ?>
     </main>
 
-    <!-- フッター -->
-    <footer class="l-footer">
-      <div class="l-footer__inner">
-        <div class="l-footer__logo">
-          <a href="index.html">
-            <img src="./assets/img/logo-footer.svg" alt="Convia" />
-          </a>
-        </div>
-        <nav class="l-footer__nav">
-          <ul class="l-footer__list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="works.html">Works</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="column.html">Column</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="service-price.html">Price</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-        <a href="privacy.html" class="l-footer__privacy">Privacy Policy</a>
-        <p class="l-footer__copyright">©2026 convia site</p>
-      </div>
-    </footer>
-
-    <!-- jsファイルの読み込み -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="./assets/js/main.js"></script>
-  </body>
-</html>
+<?php get_footer(); ?>

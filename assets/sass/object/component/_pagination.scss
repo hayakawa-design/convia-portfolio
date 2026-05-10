@@ -61,13 +61,24 @@
   }
 }
 
-// 次へ矢印（40×20px frame / line: x10→x30 / chevron: (23,3)→(30,10)→(23,17) / stroke: 2px）
+// 次へ矢印
 .c-pagination__next {
   display: block;
   width: 40px;
   height: 20px;
   text-decoration: none;
   background-image: url("data:image/svg+xml,%3Csvg width='40' height='20' viewBox='0 0 40 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10H30M23 3L30 10L23 17' stroke='%232c3e4c' stroke-width='2' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 40px 20px;
+}
+
+// 前へ矢印（次へ矢印の左右反転）
+.c-pagination__prev {
+  display: block;
+  width: 40px;
+  height: 20px;
+  text-decoration: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='20' viewBox='0 0 40 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 10H10M17 3L10 10L17 17' stroke='%232c3e4c' stroke-width='2' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: 40px 20px;
 }

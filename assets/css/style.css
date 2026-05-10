@@ -502,7 +502,6 @@ p {
   text-decoration: none;
   color: inherit;
   box-shadow: 5px 5px 4px 0 rgba(0, 0, 0, 0.25);
-  max-width: 350px;
   width: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1013,6 +1012,16 @@ p {
   background-size: 40px 20px;
 }
 
+.c-pagination__prev {
+  display: block;
+  width: 40px;
+  height: 20px;
+  text-decoration: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='20' viewBox='0 0 40 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 10H10M17 3L10 10L17 17' stroke='%232c3e4c' stroke-width='2' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 40px 20px;
+}
+
 .c-member-card {
   background-color: #fff;
   border-radius: 10px;
@@ -1407,7 +1416,7 @@ p {
   width: 100%;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 10px 0 0;
 }
 @media screen and (min-width: 768px) {
   .p-works__list {
@@ -1421,9 +1430,10 @@ p {
 .p-works__list li {
   width: 100%;
   max-width: 320px;
+  display: flex;
 }
 .p-works__list li .c-works-card {
-  height: 100%;
+  flex: 1;
 }
 
 .p-news {
@@ -1457,7 +1467,7 @@ p {
   width: 100%;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 10px 0 0;
 }
 @media screen and (min-width: 768px) {
   .p-news__list {
@@ -1467,6 +1477,13 @@ p {
     margin-left: auto;
     margin-right: auto;
   }
+}
+.p-news__list li {
+  width: 100%;
+}
+.p-news__list li .c-news-card {
+  display: flex;
+  width: 100%;
 }
 
 .p-about {

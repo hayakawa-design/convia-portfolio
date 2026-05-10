@@ -317,14 +317,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // --- Worksカード ---
-  document.querySelectorAll(".p-works__list, .p-works-list__grid, .p-works-related__list").forEach(c => {
+  document.querySelectorAll(".p-works__list, .p-works-related__list").forEach(c => {
     stagger(c, ".c-works-card");
   });
 
   // --- Newsカード ---
-  document.querySelectorAll(".p-news__list, .p-news-list__cards").forEach(c => {
-    stagger(c, ".c-news-card");
-  });
+  // document.querySelectorAll(".p-news__list, .p-news-list__cards").forEach(c => {
+  //   stagger(c, ".c-news-card");
+  // });
 
   // --- Columnカード ---
   stagger(".p-column__grid", ".c-column-card");
