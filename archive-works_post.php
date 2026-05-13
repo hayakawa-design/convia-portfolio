@@ -1,14 +1,6 @@
 <?php get_header(); ?>
 
-<nav class="c-breadcrumb" aria-label="パンくずリスト">
-  <ol class="c-breadcrumb__list">
-    <li class="c-breadcrumb__item">
-      <a href="<?php echo home_url('/'); ?>" class="c-breadcrumb__link">TOP</a>
-    </li>
-    <li class="c-breadcrumb__sep" aria-hidden="true">｜</li>
-    <li class="c-breadcrumb__item" aria-current="page">Works</li>
-  </ol>
-</nav>
+<?php get_template_part('template-parts/breadcrumb'); ?>
 
 <section class="p-page-fv">
   <h1 class="c-section-heading">
@@ -48,42 +40,7 @@
         <?php endif; ?>
       </div>
 
-      <?php
-      $total_pages   = $GLOBALS['wp_query']->max_num_pages;
-      $current_page  = max(1, get_query_var('paged'));
-
-      if ($total_pages > 1) :
-        $window = 5;
-        $start  = max(1, $current_page - 2);
-        $end    = min($total_pages, $start + $window - 1);
-        if ($end - $start < $window - 1) {
-          $start = max(1, $end - $window + 1);
-        }
-      ?>
-      <nav class="c-pagination" aria-label="ページネーション">
-
-        <?php if ($current_page > 1) : ?>
-          <a href="<?php echo get_pagenum_link($current_page - 1); ?>" class="c-pagination__prev" aria-label="前のページ"></a>
-        <?php endif; ?>
-
-        <ul class="c-pagination__list">
-          <?php for ($i = $start; $i <= $end; $i++) : ?>
-            <li>
-              <a
-                href="<?php echo get_pagenum_link($i); ?>"
-                class="c-pagination__item<?php echo $i === $current_page ? ' is-active' : ''; ?>"
-                <?php echo $i === $current_page ? 'aria-current="page"' : ''; ?>
-              ><?php echo $i; ?></a>
-            </li>
-          <?php endfor; ?>
-        </ul>
-
-        <?php if ($current_page < $total_pages) : ?>
-          <a href="<?php echo get_pagenum_link($current_page + 1); ?>" class="c-pagination__next" aria-label="次のページ"></a>
-        <?php endif; ?>
-
-      </nav>
-      <?php endif; ?>
+      <?php get_template_part('template-parts/pagination'); ?>
 
       <a href="<?php echo home_url('/'); ?>" class="c-btn">
         <span class="c-btn__text">戻る</span>

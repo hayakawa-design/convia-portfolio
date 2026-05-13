@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // 後続セクションを前面に（PC のみ）
-      [".p-works-related", ".p-contact-section", ".l-footer"].forEach((sel) => {
+      [".p-works-related", ".p-contact-section", ".p-brochure", ".l-footer"].forEach((sel) => {
         const el = document.querySelector(sel);
         if (el) {
           el.style.position = isMdNow ? "relative" : "";
@@ -327,7 +327,26 @@ document.addEventListener("DOMContentLoaded", () => {
   // });
 
   // --- Columnカード ---
-  stagger(".p-column__grid", ".c-column-card");
+  // immediateRender: false でページロード時の即時FROM適用を防ぎ、グリッド高さのズレを解消
+  const columnGrid = document.querySelector(".p-column__grid");
+  if (columnGrid) {
+    const columnCards = columnGrid.querySelectorAll(".c-column-card");
+    if (columnCards.length) {
+      gsap.from(columnCards, {
+        y: 40,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "power3.out",
+        immediateRender: false,
+        scrollTrigger: {
+          trigger: columnGrid,
+          start: "top 88%",
+          once: true,
+        },
+      });
+    }
+  }
 
   // --- Memberカード ---
   document.querySelectorAll(".p-member__grid").forEach(c => {
