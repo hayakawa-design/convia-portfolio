@@ -66,138 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const accordions = document.querySelectorAll(".js-accordion");
-
-  accordions.forEach((trigger, index) => {
-    const box = trigger.closest(".qa-box");
-    const answer = box.querySelector(".qa-box__answer");
-    const icon = box.querySelector(".qa-box__question-icon svg");
-
-    let isOpen = index === 0; // 1つ目はtrue、それ以外はfalse
-
-    if (index === 0) {
-      gsap.set(answer, {
-        height: "auto",
-        opacity: 1,
-        overflow: "hidden",
-        borderTopWidth: 1,
-      });
-      gsap.set(icon, { rotation: 45 });
-    } else {
-      gsap.set(answer, {
-        height: 0,
-        opacity: 0,
-        overflow: "hidden",
-        borderTopWidth: 0,
-      });
-    }
-
-    trigger.addEventListener("click", () => {
-      if (isOpen) {
-        gsap.to(answer, {
-          height: 0,
-          opacity: 0,
-          borderTopWidth: 0,
-          duration: 0.4,
-          ease: "power3.out",
-          overwrite: true,
-        });
-        gsap.to(icon, { rotation: 0, duration: 0.3 });
-        isOpen = false;
-      } else {
-        gsap.fromTo(
-          answer,
-          { height: 0, opacity: 0, borderTopWidth: 0 },
-          {
-            height: "auto",
-            opacity: 1,
-            borderTopWidth: 1,
-            duration: 0.4,
-            ease: "power3.out",
-            overwrite: true,
-          },
-        );
-        gsap.to(icon, { rotation: 45, duration: 0.3 });
-        isOpen = true;
-      }
-    });
-  });
-});
-
-// カードレイアウト
-document.addEventListener("DOMContentLoaded", () => {
-  const sliders = [
-    { container: ".features-cards", card: ".features-card" },
-    { container: ".reputation-cards", card: ".reputation-card" },
-  ];
-
-  sliders.forEach(({ container: containerSelector, card: cardSelector }) => {
-    const container = document.querySelector(containerSelector);
-    const cards = document.querySelectorAll(cardSelector);
-    if (!container || !cards.length) return;
-    const card = cards[1];
-    const containerCenter = container.offsetWidth / 2;
-    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-    container.scrollLeft = cardCenter - containerCenter;
-  });
-});
-
-// ページネーション
-
-document.addEventListener("DOMContentLoaded", () => {
-  const navConfigs = [
-    {
-      wrapper: ".features-cards-wrapper",
-      container: ".features-cards",
-      card: ".features-card",
-      prev: ".features-cards__prev",
-      next: ".features-cards__next",
-    },
-    {
-      wrapper: ".reputation-cards-wrapper",
-      container: ".reputation-cards",
-      card: ".reputation-card",
-      prev: ".reputation-cards__prev",
-      next: ".reputation-cards__next",
-    },
-  ];
-
-  navConfigs.forEach(({ wrapper, container, card, prev, next }) => {
-    const wrapperEl = document.querySelector(wrapper);
-    if (!wrapperEl) return;
-    const containerEl = wrapperEl.querySelector(container);
-    const cardEl = wrapperEl.querySelector(card);
-    if (!containerEl || !cardEl) return;
-    const cardWidth = cardEl.offsetWidth + 20;
-
-    wrapperEl.querySelector(prev).addEventListener("click", () => {
-      containerEl.scrollBy({ left: -cardWidth, behavior: "smooth" });
-    });
-    wrapperEl.querySelector(next).addEventListener("click", () => {
-      containerEl.scrollBy({ left: cardWidth, behavior: "smooth" });
-    });
-  });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const serviceWrappers = document.querySelectorAll(".service__cards-wrapper");
-  serviceWrappers.forEach((wrapperEl) => {
-    const containerEl = wrapperEl.querySelector(".service__cards");
-    const cardEl = wrapperEl.querySelector(".service-card");
-    if (!containerEl || !cardEl) return;
-
-    wrapperEl.querySelector(".service-cards__prev").addEventListener("click", () => {
-      const cardWidth = cardEl.offsetWidth + 20;
-      containerEl.scrollBy({ left: -cardWidth, behavior: "smooth" });
-    });
-    wrapperEl.querySelector(".service-cards__next").addEventListener("click", () => {
-      const cardWidth = cardEl.offsetWidth + 20;
-      containerEl.scrollBy({ left: cardWidth, behavior: "smooth" });
-    });
-  });
-});
-
 // メンバーカード スキルトグル（SPのみ）
 document.addEventListener("DOMContentLoaded", () => {
   const mdQuery = window.matchMedia("(min-width: 768px)");
@@ -321,11 +189,6 @@ document.addEventListener("DOMContentLoaded", () => {
     stagger(c, ".c-works-card");
   });
 
-  // --- Newsカード ---
-  // document.querySelectorAll(".p-news__list, .p-news-list__cards").forEach(c => {
-  //   stagger(c, ".c-news-card");
-  // });
-
   // --- Columnカード ---
   // immediateRender: false でページロード時の即時FROM適用を防ぎ、グリッド高さのズレを解消
   const columnGrid = document.querySelector(".p-column__grid");
@@ -349,8 +212,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // --- Memberカード ---
-  document.querySelectorAll(".p-member__grid").forEach(c => {
-    stagger(c, ".c-member-card");
+  document.querySelectorAll(".p-member__grid").forEach((grid) => {
+    const memberCards = grid.querySelectorAll(".c-member-card");
+    if (!memberCards.length) return;
+    gsap.from(memberCards, {
+      y: 40,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.1,
+      ease: "power3.out",
+      immediateRender: false,
+      scrollTrigger: {
+        trigger: grid,
+        start: "top 88%",
+        once: true,
+      },
+    });
   });
 
   // --- Flowカード ---
@@ -392,6 +269,50 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.from(el, {
       y: 30, opacity: 0, duration: 0.7, ease: "power3.out",
       scrollTrigger: { trigger: el, start: "top 88%", once: true },
+    });
+  });
+});
+
+// メンバーカードフィルター（カテゴリ＋スキル）
+document.addEventListener("DOMContentLoaded", () => {
+  const catBtns   = document.querySelectorAll(".p-member__cat-btn");
+  const skillTags = document.querySelectorAll(".p-member__skill-tag");
+  const cards     = document.querySelectorAll(".c-member-card");
+
+  if (!catBtns.length || !cards.length) return;
+
+  let activeCat    = "";
+  let activeSkills = new Set();
+
+  const applyFilter = () => {
+    cards.forEach((card) => {
+      const cats   = (card.dataset.cats   || "").split(",").map((s) => s.trim()).filter(Boolean);
+      const skills = (card.dataset.skills || "").split(",").map((s) => s.trim()).filter(Boolean);
+      const catOk   = !activeCat || cats.includes(activeCat);
+      const skillOk = activeSkills.size === 0 || [...activeSkills].every((s) => skills.includes(s));
+      card.style.display = catOk && skillOk ? "" : "none";
+    });
+  };
+
+  catBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      catBtns.forEach((b) => b.classList.remove("is-active"));
+      btn.classList.add("is-active");
+      activeCat = btn.dataset.cat || "";
+      applyFilter();
+    });
+  });
+
+  skillTags.forEach((tag) => {
+    tag.addEventListener("click", () => {
+      tag.classList.toggle("is-active");
+      const skill = tag.dataset.skill || "";
+      if (tag.classList.contains("is-active")) {
+        activeSkills.add(skill);
+      } else {
+        activeSkills.delete(skill);
+      }
+      applyFilter();
     });
   });
 });

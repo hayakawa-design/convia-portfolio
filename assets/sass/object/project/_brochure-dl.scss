@@ -269,3 +269,178 @@
     font-size: 16px;
   }
 }
+
+// =============================================
+// Contact Form 7 スタイル調整
+// =============================================
+
+.p-brochure-dl .wpcf7 {
+  width: 100%;
+  max-width: 672px;
+}
+
+.p-brochure-dl .wpcf7-form {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  width: 100%;
+}
+
+.p-brochure-dl .wpcf7-text,
+.p-brochure-dl .wpcf7-email,
+.p-brochure-dl .wpcf7-tel {
+  width: 100%;
+  height: 50px;
+  padding: 0 16px;
+  border: 1px solid #d1d5dc;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: $ff-ja;
+  color: $color-text;
+  background-color: #fff;
+  appearance: none;
+  outline: none;
+  box-sizing: border-box;
+
+  &::placeholder { color: rgba(10, 10, 10, 0.5); }
+  &:focus { border-color: $color-main; }
+}
+
+.p-brochure-dl .wpcf7-textarea {
+  width: 100%;
+  height: 200px;
+  padding: 12px 16px;
+  border: 1px solid #d1d5dc;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: $ff-ja;
+  color: $color-text;
+  background-color: #fff;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+
+  &::placeholder { color: rgba(10, 10, 10, 0.5); }
+  &:focus { border-color: $color-main; }
+}
+
+.p-brochure-dl .wpcf7-not-valid {
+  border-color: $accent-color !important;
+}
+
+.p-brochure-dl .wpcf7-not-valid-tip {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  font-family: $ff-ja;
+  color: $accent-color;
+}
+
+.p-brochure-dl .wpcf7-response-output {
+  margin: 0;
+  padding: 12px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: $ff-ja;
+  border: none;
+
+  .wpcf7-form.sent & {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  .wpcf7-form.invalid &,
+  .wpcf7-form.failed &,
+  .wpcf7-form.aborted & {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+}
+
+.p-brochure-dl .wpcf7-acceptance {
+  .wpcf7-list-item {
+    margin-left: 0 !important;
+    display: flex;
+    align-items: center;
+
+    label {
+      display: flex !important;
+      align-items: center;
+      gap: 5px !important;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      border: 2px solid #6b6866;
+      border-radius: 2px;
+      accent-color: $color-main;
+      cursor: pointer;
+      margin: 0 5px 0 0;
+    }
+
+    .wpcf7-list-item-label {
+      font-size: 16px;
+      font-weight: 400;
+      font-family: $ff-ja;
+      color: #1a1a1a;
+      line-height: 20px;
+      cursor: pointer;
+    }
+  }
+}
+
+.p-brochure-dl__btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 300px;
+  padding: 15px 30px;
+  background-color: $color-text;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: radial-gradient(circle closest-side, $color-text 52%, #fff 52%);
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  }
+
+  @include mq(md) {
+    width: 350px;
+  }
+
+  .wpcf7-submit {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: $ff-ja;
+    line-height: 24px;
+    cursor: pointer;
+    padding: 0;
+    text-align: left;
+    appearance: none;
+
+    @include mq(md) {
+      font-size: 16px;
+    }
+  }
+}

@@ -196,8 +196,13 @@
 .p-column-toc {
   border: 1px solid #e0e0e0;
   border-radius: 4px;
-  padding: 20px 24px 8px;
-  margin-bottom: 40px;
+  padding: 16px 16px 4px;
+  margin-bottom: 30px;
+
+  @include mq(md) {
+    padding: 20px 24px 8px;
+    margin-bottom: 40px;
+  }
 }
 
 .p-column-toc__title {
@@ -205,13 +210,19 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   font-family: Arial, sans-serif;
   color: $color-text;
   text-align: center;
-  margin: 0 0 12px;
-  padding-bottom: 12px;
+  margin: 0 0 10px;
+  padding-bottom: 10px;
+
+  @include mq(md) {
+    font-size: 16px;
+    margin: 0 0 12px;
+    padding-bottom: 12px;
+  }
 
   &::before {
     content: '';
@@ -234,7 +245,7 @@
 
 .p-column-toc__item {
   &--sub {
-    padding-left: 16px;
+    padding-left: 12px;
 
     @include mq(md) {
       padding-left: 24px;
@@ -246,10 +257,10 @@
   display: flex;
   align-items: center;
   gap: 0;
-  padding: 10px 0;
+  padding: 8px 0;
   color: $color-text;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 12px;
   font-family: Arial, sans-serif;
   line-height: 1.5;
 
@@ -257,8 +268,8 @@
   &:visited,
   &:hover,
   &:active {
-    color: $color-text;
-    text-decoration: none;
+    color: $color-text !important;
+    text-decoration: none !important;
   }
 
   &:hover {
@@ -267,6 +278,7 @@
 
   @include mq(md) {
     font-size: 14px;
+    padding: 10px 0;
   }
 }
 
@@ -295,7 +307,11 @@
   flex-direction: column;
   gap: 0;
   background-color: #fff;
-  padding: 24px;
+  padding: 16px;
+
+  @include mq(md) {
+    padding: 24px;
+  }
 
   // ブロックエディター：カラムブロックの白背景を除去
   .wp-block-columns {
@@ -309,22 +325,28 @@
 
   h2 {
     background: #2C3E4C;
-    padding: 17px 20px;
+    padding: 12px 16px;
     color: #fff;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 700;
     font-family: Arial, sans-serif;
-    margin: 90px 0 45px;
+    margin: 48px 0 24px;
+
+    @include mq(md) {
+      font-size: 22px;
+      padding: 17px 20px;
+      margin: 90px 0 45px;
+    }
   }
 
   h3 {
     position: relative;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     font-family: Arial, sans-serif;
     color: $color-text;
-    margin: 62px 0 41px;
-    padding-bottom: 10px;
+    margin: 36px 0 20px;
+    padding-bottom: 8px;
 
     &::after {
       content: '';
@@ -333,38 +355,71 @@
       left: 0;
       width: 100%;
       height: 2px;
-      background: linear-gradient(to right, $color-text 240px, #e0e0e0 240px);
+      background: linear-gradient(to right, $color-text 160px, #e0e0e0 160px);
+    }
+
+    @include mq(md) {
+      font-size: 20px;
+      margin: 62px 0 41px;
+      padding-bottom: 10px;
+
+      &::after {
+        background: linear-gradient(to right, $color-text 240px, #e0e0e0 240px);
+      }
     }
   }
 
   p {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     font-family: Arial, sans-serif;
     color: #333;
     line-height: 1.9;
-    margin: 0 0 16px;
+    margin: 0 0 12px;
+
+    @include mq(md) {
+      font-size: 16px;
+      margin: 0 0 16px;
+    }
   }
 
   // ブロックエディターのリストスタイルを有効化
   ul.wp-block-list {
-    list-style-type: disc;
-    font-size: 16px;
+    list-style-type: disc !important;
+    font-size: 14px;
     font-family: Arial, sans-serif;
     color: #333;
     line-height: 1.9;
-    padding-left: 1.5em;
-    margin: 0 0 16px;
+    padding-left: 1.5em !important;
+    margin: 0 0 12px;
+
+    li {
+      list-style-type: disc !important;
+    }
+
+    @include mq(md) {
+      font-size: 16px;
+      margin: 0 0 16px;
+    }
   }
 
   ol.wp-block-list {
-    list-style-type: decimal;
-    font-size: 16px;
+    list-style-type: decimal !important;
+    font-size: 14px;
     font-family: Arial, sans-serif;
     color: #333;
     line-height: 1.9;
-    padding-left: 1.5em;
-    margin: 0 0 16px;
+    padding-left: 1.5em !important;
+    margin: 0 0 12px;
+
+    li {
+      list-style-type: decimal !important;
+    }
+
+    @include mq(md) {
+      font-size: 16px;
+      margin: 0 0 16px;
+    }
   }
 
   img {
@@ -372,7 +427,11 @@
     height: auto;
     display: block;
     border-radius: 4px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+
+    @include mq(md) {
+      margin-bottom: 20px;
+    }
   }
 
   a {

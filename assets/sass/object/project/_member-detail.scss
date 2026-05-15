@@ -232,6 +232,44 @@
   }
 }
 
+// 本文エリア（the_content() 出力）
+.p-member-detail__body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+
+  @include mq(md) {
+    gap: 30px;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+    color: $color-cta-text;
+    margin: 0;
+    line-height: 1.3;
+
+    @include mq(md) {
+      font-size: 20px;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: $ff-ja;
+    color: #333;
+    line-height: 1.9;
+    margin: 0;
+
+    @include mq(md) {
+      font-size: 16px;
+    }
+  }
+}
+
 // 一覧に戻るボタンエリア
 .p-member-detail__back {
   display: flex;

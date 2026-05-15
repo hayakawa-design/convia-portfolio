@@ -2,7 +2,7 @@
 
 .c-global-menu {
   display: flex;
-  gap: 40px;
+  gap: clamp(12px, 3vw, 40px);
   margin: 0;
   padding: 0;
 

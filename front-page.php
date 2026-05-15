@@ -174,7 +174,7 @@
             私たちは、それぞれの専門性を持ち寄り、クライアントと誠実に向き合うWeb制作チームです。<br />
             企画・デザイン・実装を一貫して担い、本質的な価値を届けることを大切にしています。
           </p>
-          <a href="<?php echo home_url('/about/'); ?>" class="c-btn">
+          <a href="<?php echo esc_url(get_permalink(get_page_by_path('about-us')) ?: home_url('/about-us/')); ?>" class="c-btn">
             <span class="c-btn__text">メンバーのプロフィールを見る</span>
             <span class="c-btn__icon" aria-hidden="true"></span>
           </a>

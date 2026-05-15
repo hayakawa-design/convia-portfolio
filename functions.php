@@ -103,6 +103,7 @@ function convia_lab_register_post_types() {
         'supports'      => ['title', 'editor', 'thumbnail', 'excerpt'],
         'rewrite'       => ['slug' => 'member'],
     ]);
+
 }
 add_action('init', 'convia_lab_register_post_types');
 

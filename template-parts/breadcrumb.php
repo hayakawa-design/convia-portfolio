@@ -2,7 +2,7 @@
 $label_map = [
     'works_post'  => ['label' => 'Works',  'url' => get_post_type_archive_link('works_post')],
     'column_post' => ['label' => 'Column', 'url' => get_post_type_archive_link('column_post')],
-    'member_post' => ['label' => 'About',  'url' => get_post_type_archive_link('member_post')],
+    'member_post' => ['label' => 'About',  'url' => get_permalink(get_page_by_path('about-us')) ?: home_url('/about-us/')],
     'post'        => ['label' => 'News',   'url' => get_post_type_archive_link('post') ?: home_url('/news/')],
 ];
 

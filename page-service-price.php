@@ -1,0 +1,363 @@
+<?php
+/*
+ * Template Name: Service / Price
+ */
+get_header();
+$img = get_template_directory_uri() . '/assets/img';
+?>
+
+<?php get_template_part('template-parts/breadcrumb'); ?>
+
+<section class="p-page-fv">
+  <h1 class="c-section-heading">
+    <span class="c-section-heading__en">Service</span>
+    <span class="c-section-heading__ja">できること</span>
+  </h1>
+</section>
+
+<main>
+
+  <!-- What We Do 上部ウェーブ -->
+  <div class="p-what-we-do__wave-top" aria-hidden="true">
+    <svg class="p-what-we-do__wave-svg--sp" viewBox="0 0 375 27" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M375 14.8904C327.98 3.65376 208.49 -12.0776 106.689 14.8904C88.1126 20.3592 40.7682 28.0155 0 14.8904V26.0417H375V14.8904Z" fill="#D4E3E8"/>
+    </svg>
+    <svg class="p-what-we-do__wave-svg--pc" viewBox="0 0 1440 120" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1440 54.8987C1312.54 13.4708 985.345 -44.5281 696.225 54.8987C578.65 94.2745 274.799 149.401 0 54.8987V120H1440V54.8987Z" fill="#D4E3E8"/>
+    </svg>
+  </div>
+
+  <!-- What We Do セクション -->
+  <section class="p-what-we-do">
+    <div class="p-what-we-do__inner">
+      <div class="p-what-we-do__cards">
+        <div class="p-what-we-do__card">
+          <div class="p-what-we-do__icon">
+            <span class="p-what-we-do__icon-label">Web制作</span>
+          </div>
+          <p class="p-what-we-do__text">企画からデザイン、実装まで一貫した制作体制で、使いやすく美しいWebサイトを提供します。</p>
+        </div>
+        <div class="p-what-we-do__card">
+          <div class="p-what-we-do__icon">
+            <span class="p-what-we-do__icon-label">デザイン</span>
+          </div>
+          <p class="p-what-we-do__text">ブランドの価値を視覚化し、ユーザーに届けるためのデザインシステムを構築します。</p>
+        </div>
+        <div class="p-what-we-do__card">
+          <div class="p-what-we-do__icon">
+            <span class="p-what-we-do__icon-label">企画・運用</span>
+          </div>
+          <p class="p-what-we-do__text">公開後の改善提案や運用サポートまで、長期的なパートナーとして伴走します。</p>
+        </div>
+      </div>
+      <p class="p-what-we-do__more">and more…</p>
+    </div>
+  </section>
+
+  <!-- What We Do 下部ウェーブ -->
+  <div class="p-what-we-do__wave-bottom" aria-hidden="true">
+    <svg class="p-what-we-do__wave-svg--sp" viewBox="0 0 375 27" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 11.1487C47.0199 22.3853 166.51 38.1166 268.311 11.1487C286.887 5.67989 334.232 -1.97639 375 11.1487V-0.00260353H0V11.1487Z" fill="#f5f7f8"/>
+    </svg>
+    <svg class="p-what-we-do__wave-svg--pc" viewBox="0 0 1440 120" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 65.1013C127.458 106.529 454.655 164.528 743.775 65.1013C861.35 25.7255 1165.2 -29.4006 1440 65.1013V0H0V65.1013Z" fill="#D4E3E8"/>
+    </svg>
+  </div>
+
+  <!-- Price 見出し -->
+  <section class="p-page-fv">
+    <h2 class="c-section-heading">
+      <span class="c-section-heading__en">Price</span>
+      <span class="c-section-heading__ja">料金</span>
+    </h2>
+  </section>
+
+  <!-- Price カードセクション -->
+  <section class="p-service-price-cards">
+    <div class="p-service-price-cards__inner">
+
+      <!-- ホームページ -->
+      <div class="p-service-price-cards__sub">
+        <h3 class="c-section-heading">
+          <span class="c-section-heading__en">Homepage</span>
+          <span class="c-section-heading__ja">ホームページ</span>
+        </h3>
+        <div class="p-service-price-cards__homepage-cards">
+          <div class="c-price-card">
+            <div class="c-price-card__head">
+              <p class="c-price-card__name">スタンダードプラン</p>
+              <p class="c-price-card__price">15万円〜</p>
+              <p class="c-price-card__type">WordPressのテーマを元に作るサイト</p>
+            </div>
+            <div class="c-price-card__body">
+              <p class="c-price-card__tagline">予算は抑えたいけれど、ページ数は必要な方におすすめ</p>
+              <ul class="c-price-card__features">
+                <li class="c-price-card__feature">WordPressのブロックテーマを元に最小限のカスタマイズで必要コンテンツを取り入れて制作します。</li>
+                <li class="c-price-card__feature">お問い合わせフォーム設置</li>
+                <li class="c-price-card__feature">レスポンシブ対応</li>
+              </ul>
+            </div>
+          </div>
+          <div class="c-price-card">
+            <div class="c-price-card__head">
+              <p class="c-price-card__name">スタンダードプラン</p>
+              <p class="c-price-card__price">30万円〜</p>
+              <p class="c-price-card__type">WordPressのオリジナルテーマで作るサイト</p>
+            </div>
+            <div class="c-price-card__body">
+              <p class="c-price-card__tagline">問い合わせに繋がる集客を意識した設計</p>
+              <ul class="c-price-card__features">
+                <li class="c-price-card__feature">WordPressのオリジナルテーマを作り、自由度の高いデザインで様々なコンテンツを取り入れて制作します。</li>
+                <li class="c-price-card__feature">基本SEO設計</li>
+                <li class="c-price-card__feature">リリース後30日間の無料サポート</li>
+              </ul>
+            </div>
+          </div>
+          <div class="c-price-card">
+            <div class="c-price-card__head">
+              <p class="c-price-card__name">アドバンスプラン</p>
+              <p class="c-price-card__price">60万円〜</p>
+              <p class="c-price-card__type">オリジナルテーマでSEO設計を強化したサイト</p>
+            </div>
+            <div class="c-price-card__body">
+              <p class="c-price-card__tagline">戦略的に売上に繋がるサイトを設計</p>
+              <ul class="c-price-card__features">
+                <li class="c-price-card__feature">SEO内部強化設定はもちろん、Googleアナリティクスやサーチコンソールで戦略的に売り上げに繋がるサイトを設計します。</li>
+                <li class="c-price-card__feature">SNSシェアボタン設置</li>
+                <li class="c-price-card__feature">顧客管理サポート</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- その他 -->
+      <div class="p-service-price-cards__sub">
+        <h3 class="c-section-heading">
+          <span class="c-section-heading__en">Other Services</span>
+          <span class="c-section-heading__ja">その他</span>
+        </h3>
+        <div class="p-service-price-cards__other-slider">
+          <div class="p-service-price-cards__other-cards">
+            <div class="c-service-card">
+              <div class="c-service-card__badge" aria-hidden="true"><span class="c-service-card__badge-text">MOVIE</span></div>
+              <div class="c-service-card__head">
+                <p class="c-service-card__name">動画編集</p>
+                <p class="c-service-card__price">8,000円〜</p>
+              </div>
+              <p class="c-service-card__tagline">離脱されない構成に最適化した動画編集</p>
+              <p class="c-service-card__desc">ショート/YouTube対応/テロップ/カット編集/構成改善提案</p>
+            </div>
+            <div class="c-service-card">
+              <div class="c-service-card__badge" aria-hidden="true"><span class="c-service-card__badge-text">SNS</span></div>
+              <div class="c-service-card__head">
+                <p class="c-service-card__name">SNS運用</p>
+                <p class="c-service-card__price">70,000円〜</p>
+              </div>
+              <p class="c-service-card__tagline">フォロワー増で終わらない"集客導線型"運用<br />投稿しても集客につながらない方へ。</p>
+              <p class="c-service-card__desc">投稿企画/運用代行/分析/改善/導線設計</p>
+            </div>
+            <div class="c-service-card">
+              <div class="c-service-card__badge" aria-hidden="true"><span class="c-service-card__badge-text">LINE</span></div>
+              <div class="c-service-card__head">
+                <p class="c-service-card__name">LINE構築</p>
+                <p class="c-service-card__price">100,000円〜</p>
+              </div>
+              <p class="c-service-card__tagline">登録→教育→成約まで自動化するLINE設計<br />手動対応に限界を感じている方へ。</p>
+              <p class="c-service-card__desc">リッチメニュー設計/ステップ配信/導線構築</p>
+            </div>
+            <div class="c-service-card">
+              <div class="c-service-card__badge" aria-hidden="true"><span class="c-service-card__badge-text">Shopify</span></div>
+              <div class="c-service-card__head">
+                <p class="c-service-card__name">ECサイト</p>
+                <p class="c-service-card__price">250,000円〜</p>
+              </div>
+              <p class="c-service-card__tagline">"買われない原因"を潰すECサイト設計<br />アクセスはあるのに売れない方へ。</p>
+              <p class="c-service-card__desc">商品ページ改善/カート/決済導線設計/スマホ最適化</p>
+            </div>
+            <div class="c-service-card">
+              <div class="c-service-card__badge" aria-hidden="true"><span class="c-service-card__badge-text">Marketing</span></div>
+              <div class="c-service-card__head">
+                <p class="c-service-card__name">マーケティング</p>
+                <p class="c-service-card__price">120,000円〜</p>
+              </div>
+              <p class="c-service-card__tagline">何をやるべきか明確になるマーケ支援<br />施策がバラバラで成果が出ない方へ。</p>
+              <p class="c-service-card__desc">現状分析/戦略設計/施策整理/実行支援</p>
+            </div>
+            <div class="c-service-card">
+              <div class="c-service-card__badge" aria-hidden="true"><span class="c-service-card__badge-text">ライティング</span></div>
+              <div class="c-service-card__head">
+                <p class="c-service-card__name">ライティング</p>
+                <p class="c-service-card__price">3円〜 / 1文字</p>
+              </div>
+              <p class="c-service-card__tagline">検索→読了→行動まで設計するSEOライティング<br />記事を書いても成果が出ない方へ。</p>
+              <p class="c-service-card__desc">SEO構成から対応/記事/LP制作/リライト可</p>
+            </div>
+            <div class="c-service-card">
+              <div class="c-service-card__badge" aria-hidden="true"><span class="c-service-card__badge-text">DTP</span></div>
+              <div class="c-service-card__head">
+                <p class="c-service-card__name">DTP</p>
+                <p class="c-service-card__price">30,000円〜</p>
+              </div>
+              <p class="c-service-card__tagline">"手に取られない原因"を改善するデザイン<br />配っても反応がない方へ。</p>
+              <p class="c-service-card__desc">チラシ/パンフ制作/構成/レイアウト設計/印刷データ対応</p>
+            </div>
+            <div class="c-service-card">
+              <div class="c-service-card__badge" aria-hidden="true"><span class="c-service-card__badge-text">Illustrator</span></div>
+              <div class="c-service-card__head">
+                <p class="c-service-card__name">イラスト</p>
+                <p class="c-service-card__price">15,000円〜</p>
+              </div>
+              <p class="c-service-card__tagline">埋もれないためのオリジナルビジュアル制作<br />他と差別化できていない方へ。</p>
+              <p class="c-service-card__desc">SNS/広告用イラスト/キャラクター制作/テイスト調整</p>
+            </div>
+            <div class="c-service-card">
+              <div class="c-service-card__badge" aria-hidden="true"><span class="c-service-card__badge-text">direction</span></div>
+              <div class="c-service-card__head">
+                <p class="c-service-card__name">WEBディレクション</p>
+                <p class="c-service-card__price">ご相談ください</p>
+              </div>
+              <p class="c-service-card__tagline">制作のバラつきをなくす一括管理<br />複数人とのやり取りが負担な方へ。</p>
+              <p class="c-service-card__desc">進行管理/品質チェック/納期管理</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ウェーブ：price → flow -->
+  <div class="p-service-price-flow__wave-top" aria-hidden="true">
+    <svg class="p-service-price-flow__wave-svg--pc" viewBox="0 0 1440 100" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 42.8208C180.556 85.9696 639.398 146.378 1030.32 42.8208C1101.65 21.8208 1283.45 -7.57934 1440 42.8208V0H0V42.8208Z" fill="#F5F7F8"/>
+    </svg>
+  </div>
+
+  <!-- Flow 見出し -->
+  <section class="p-page-fv p-page-fv--white">
+    <h2 class="c-section-heading">
+      <span class="c-section-heading__en">Flow</span>
+      <span class="c-section-heading__ja">ご依頼の流れ</span>
+    </h2>
+  </section>
+
+  <!-- フロー + Communication & Tools -->
+  <section class="p-service-price-flow">
+    <div class="p-service-price-flow__inner">
+
+      <div class="p-flow__list">
+        <div class="c-flow-card">
+          <div class="c-flow-card__head">
+            <p class="c-flow-card__step">STEP 01</p>
+            <div class="c-flow-card__icon"><img src="<?php echo $img; ?>/flow-icon-01.svg" alt="" /></div>
+          </div>
+          <div class="c-flow-card__body">
+            <p class="c-flow-card__title">お問い合わせ・ご相談</p>
+            <p class="c-flow-card__text">まずはお気軽にお問い合わせください。<br />制作内容が未定でも問題ありません。</p>
+          </div>
+        </div>
+        <div class="c-flow-arrow" aria-hidden="true"></div>
+        <div class="c-flow-card">
+          <div class="c-flow-card__head">
+            <p class="c-flow-card__step">STEP 02</p>
+            <div class="c-flow-card__icon"><img src="<?php echo $img; ?>/flow-icon-02.svg" alt="" /></div>
+          </div>
+          <div class="c-flow-card__body">
+            <p class="c-flow-card__title">ヒアリング</p>
+            <p class="c-flow-card__text">目的・ターゲット・ご予算・納期などをお伺いし、<br />最適な制作プランをご提案します。</p>
+          </div>
+        </div>
+        <div class="c-flow-arrow" aria-hidden="true"></div>
+        <div class="c-flow-card">
+          <div class="c-flow-card__head">
+            <p class="c-flow-card__step">STEP 03</p>
+            <div class="c-flow-card__icon"><img src="<?php echo $img; ?>/flow-icon-03.svg" alt="" /></div>
+          </div>
+          <div class="c-flow-card__body">
+            <p class="c-flow-card__title">お見積り・ご契約</p>
+            <p class="c-flow-card__text">制作内容とスケジュールをご提示します。<br />内容にご納得いただけましたら制作開始となります。</p>
+          </div>
+        </div>
+        <div class="c-flow-arrow" aria-hidden="true"></div>
+        <div class="c-flow-card">
+          <div class="c-flow-card__head">
+            <p class="c-flow-card__step">STEP 04</p>
+            <div class="c-flow-card__icon"><img src="<?php echo $img; ?>/flow-icon-04.svg" alt="" /></div>
+          </div>
+          <div class="c-flow-card__body">
+            <p class="c-flow-card__title">構成・デザイン制作</p>
+            <p class="c-flow-card__text">構成案を確認後、デザイン制作を進めます。<br />チーム体制で品質チェックを行いながら制作します。</p>
+          </div>
+        </div>
+        <div class="c-flow-arrow" aria-hidden="true"></div>
+        <div class="c-flow-card">
+          <div class="c-flow-card__head">
+            <p class="c-flow-card__step">STEP 05</p>
+            <div class="c-flow-card__icon"><img src="<?php echo $img; ?>/flow-icon-05.svg" alt="" /></div>
+          </div>
+          <div class="c-flow-card__body">
+            <p class="c-flow-card__title">サイト実装</p>
+            <p class="c-flow-card__text">デザイン確定後、コーディング・公開準備を行います。<br />スマートフォン対応や動作確認も丁寧に実施します。</p>
+          </div>
+        </div>
+        <div class="c-flow-arrow" aria-hidden="true"></div>
+        <div class="c-flow-card">
+          <div class="c-flow-card__head">
+            <p class="c-flow-card__step">STEP 06</p>
+            <div class="c-flow-card__icon"><img src="<?php echo $img; ?>/flow-icon-06.svg" alt="" /></div>
+          </div>
+          <div class="c-flow-card__body">
+            <p class="c-flow-card__title">納品・サポート</p>
+            <p class="c-flow-card__text">公開後も軽微な修正や運用のご相談に対応可能です。<br />長期的に伴走できる体制を整えています。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Communication & Tools -->
+      <div class="p-comm-tools">
+        <h2 class="p-comm-tools__heading">Communication &amp; Tools</h2>
+        <div class="p-comm-tools__communication">
+          <h3 class="p-comm-tools__sub-heading p-comm-tools__sub-heading--lg">コミュニケーションスタンス</h3>
+          <p class="p-comm-tools__text">定期的な進捗報告と、こまめな確認を大切にしています。Slackでの日常的なやりとりに加え、必要に応じてオンラインミーティングを設定し、認識のズレが生まれないよう心がけています。また、Notionでドキュメントを共有し、誰もが最新の情報にアクセスできる環境を整えています。</p>
+        </div>
+        <div class="p-comm-tools__tools">
+          <h3 class="p-comm-tools__sub-heading">使用ツール</h3>
+          <div class="p-comm-tools__tools-grid">
+            <div class="p-comm-tools__tools-col">
+              <span class="p-comm-tools__category">デザイン</span>
+              <ul class="p-comm-tools__list">
+                <li>Figma</li><li>Adobe XD</li><li>Illustrator</li><li>Photoshop</li>
+              </ul>
+            </div>
+            <div class="p-comm-tools__tools-col">
+              <span class="p-comm-tools__category">実装</span>
+              <ul class="p-comm-tools__list">
+                <li>HTML/CSS</li><li>JavaScript</li><li>React</li><li>Next.js</li><li>WordPress</li>
+              </ul>
+            </div>
+            <div class="p-comm-tools__tools-col">
+              <span class="p-comm-tools__category">コミュニケーション</span>
+              <ul class="p-comm-tools__list">
+                <li>Slack</li><li>Notion</li><li>Google Meet</li><li>Zoom</li>
+              </ul>
+            </div>
+            <div class="p-comm-tools__tools-col">
+              <span class="p-comm-tools__category">プロジェクト管理</span>
+              <ul class="p-comm-tools__list">
+                <li>Notion</li><li>GitHub</li><li>Figma</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <?php get_template_part('template-parts/section-contact'); ?>
+  <?php get_template_part('template-parts/section-brochure'); ?>
+
+</main>
+
+<?php get_footer(); ?>

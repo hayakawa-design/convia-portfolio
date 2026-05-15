@@ -145,8 +145,9 @@
 // 「個人情報の取り扱い」タイトル行
 .p-contact__privacy-title-row {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 3px;
+  gap: 0;
 }
 
 .p-contact__privacy-title {
@@ -154,6 +155,7 @@
   font-weight: 400;
   font-family: Arial, sans-serif;
   color: #1a1a1a;
+  margin-right: 3px;
 }
 
 // チェックボックスラベル内のリンク（「プライバシーポリシー」のみ）
@@ -192,6 +194,228 @@
 .p-contact__submit {
   display: flex;
   justify-content: center;
+}
+
+// =============================================
+// Contact Form 7 スタイル調整
+// =============================================
+
+// CF7 ラッパーを .p-contact__form と同幅・同デザインに
+.p-contact .wpcf7 {
+  width: 100%;
+  max-width: 672px;
+}
+
+.p-contact .wpcf7-form {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  width: 100%;
+}
+
+// CF7 が生成する text / email 入力欄を .p-contact__input と同スタイルに
+.p-contact .wpcf7-text,
+.p-contact .wpcf7-email {
+  width: 100%;
+  height: 50px;
+  padding: 0 12px;
+  border: 1px solid #d0d5db;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  color: $color-text;
+  background-color: #fff;
+  appearance: none;
+  outline: none;
+  box-sizing: border-box;
+
+  &::placeholder { color: #aaa; }
+  &:focus { border-color: $color-main; }
+}
+
+// CF7 が生成する textarea を .p-contact__textarea と同スタイルに
+.p-contact .wpcf7-textarea {
+  width: 100%;
+  height: 218px;
+  padding: 12px 16px;
+  border: 1px solid #d0d5db;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  color: $color-text;
+  background-color: #fff;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+
+  &::placeholder { color: #aaa; }
+  &:focus { border-color: $color-main; }
+}
+
+// バリデーションエラー：入力枠
+.p-contact .wpcf7-not-valid {
+  border-color: $accent-color !important;
+}
+
+// バリデーションエラー：メッセージ
+.p-contact .wpcf7-not-valid-tip {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  color: $accent-color;
+}
+
+// 送信後レスポンスメッセージ
+.p-contact .wpcf7-response-output {
+  margin: 0;
+  padding: 12px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  border: none;
+
+  .wpcf7-form.sent & {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  .wpcf7-form.invalid &,
+  .wpcf7-form.failed &,
+  .wpcf7-form.aborted & {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+}
+
+// お問い合わせ種別チェックボックスグループ（縦積み）
+.p-contact .wpcf7-checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .wpcf7-list-item {
+    margin: 0;
+    display: flex;
+    align-items: center;
+
+    label {
+      display: flex !important;
+      flex-direction: row;
+      align-items: center;
+      gap: 5px !important;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      border: 1px solid #6b6866;
+      border-radius: 2px;
+      accent-color: $color-main;
+      cursor: pointer;
+      margin: 0 5px 0 0;
+    }
+
+    .wpcf7-list-item-label {
+      font-size: 16px;
+      font-weight: 400;
+      font-family: Arial, sans-serif;
+      color: $color-text;
+      line-height: 20px;
+    }
+  }
+}
+
+// 同意チェックボックス（acceptance）内の list-item 左マージン除去
+.p-contact .wpcf7-acceptance .wpcf7-list-item {
+  margin-left: 0 !important;
+}
+
+// 同意チェックボックス（acceptance）
+.p-contact .wpcf7-acceptance {
+  label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    border: 1px solid #6b6866;
+    border-radius: 2px;
+    accent-color: $color-main;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  .wpcf7-list-item-label {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: Arial, sans-serif;
+    color: $color-text;
+    cursor: pointer;
+  }
+}
+
+// 送信ボタン：.c-btn レイアウトを再現
+.p-contact__btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 300px;
+  padding: 15px 30px;
+  background-color: $color-text;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  // c-btn__icon と同じ丸アイコンを ::after で描画
+  &::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: radial-gradient(circle closest-side, $color-text 52%, #fff 52%);
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  }
+
+  @include mq(md) {
+    width: 350px;
+  }
+
+  .wpcf7-submit {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: Arial, sans-serif;
+    line-height: 24px;
+    cursor: pointer;
+    padding: 0;
+    text-align: left;
+    appearance: none;
+
+    @include mq(md) {
+      font-size: 16px;
+    }
+  }
 }
 
 // =============================================
